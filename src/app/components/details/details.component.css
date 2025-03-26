@@ -5,8 +5,8 @@
 
 /* product poster image */
 .product-img {
-  width: 260px !important;
-  height: 390px;
+  width: 100% !important;
+  /* height: 390px; */
   border-radius: 10px;
   border: solid 3px white;
 
@@ -17,7 +17,7 @@
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  width: 405px !important;
+  width: 80% !important;
   /* height: 452px; */
 }
 .card-btn{

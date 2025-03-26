@@ -11,7 +11,7 @@
         <div *ngFor="let prod of twoDimArray[index] index as i " class="card m-0" style="width: 18rem;">
           <img [src]="prod.images[0]" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{prod.title}}</h5>
+            <h5 class="card-title ">{{prod.title}}</h5>
             <h6 class="card-title">{{prod.price}}$</h6>
             <a routerLink="/detalis/{{prod.id}}" class="btn btn-primary">detalis</a>
           </div>

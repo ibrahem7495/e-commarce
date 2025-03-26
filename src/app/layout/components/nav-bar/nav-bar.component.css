@@ -57,3 +57,10 @@ a:hover{
 .align-self{
 align-self: flex-end;
 }
+.img-fluid{
+  height: 100%;
+
+}
+/* .navbar-nav {
+  flex-wrap: nowrap !important;
+} */

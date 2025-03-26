@@ -14,11 +14,12 @@ export class DetailsComponent implements OnInit {
 product:ProdType;
 relatedProd?:ProdType[];
 relatedProdWindow?:ProdType[];
-windoowLimit:number;
+windoowLimit:number=1;
 index:number=0;
-  constructor(private activatedRoute:ActivatedRoute,private apiService:ApiService, private carouselService:CarouselService,private cartService:CartService) {
-  this.windoowLimit=4;
-    this.product=  {
+  constructor(private activatedRoute:ActivatedRoute,private apiService:ApiService, private carouselService:CarouselService,private cartService:CartService ) {
+
+    this.setCarouselWindowLimit()
+      this.product=  {
       id: 6,
       title: "Classic Comfort Fit Joggers",
       slug: "classic-comfort-fit-joggers",
@@ -101,6 +102,19 @@ this.index=0;
   this.relatedProdWindow=this.relatedProd?.slice(this.index,this.index+this.windoowLimit)
 console.log("window",this.relatedProdWindow)
 console.log("index",this.index)
+
+}
+setCarouselWindowLimit(){
+   const windowWidth=window.innerWidth
+
+   this.windoowLimit=4;
+  if (windowWidth > 1024) {
+    this.windoowLimit = 4;
+  } else if (windowWidth > 768) {
+    this.windoowLimit = 3;
+  } else {
+    this.windoowLimit = 1;
+  }
 
 }
 }

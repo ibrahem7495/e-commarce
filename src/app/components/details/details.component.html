@@ -5,7 +5,7 @@
          <!-- image slider start -->
          <ngb-carousel *ngIf="product.images.length " >
           <ng-template ngbSlide *ngFor="let img of product.images">
-            <img [src]="img" style="width: 400px;" alt="Slide image">
+            <img [src]="img" class="img-fluid" alt="Slide image">
           </ng-template>
         </ngb-carousel>
                <!-- image slider end -->
@@ -47,24 +47,25 @@
 
   </div>
 <hr>
+<!--Products related to this item  -->
 <h3>Products related to this item</h3>
 
 <div id="cardCarousel" class="carousel slide " data-bs-ride="carousel">
   <div class="carousel-inner">
     <div  class="carousel-item active">
       <div  class="d-flex justify-content-center">
-        <div *ngFor="let prod of relatedProdWindow index as i " class="card m-0" style="width: 18rem;">
-          <img [src]="prod.images[0]" class="card-img-top" alt="product image">
-          <div class="card-body">
-            <h5 class="card-title">{{prod.title}}</h5>
-            <h6 class="card-title">{{prod.price}}$</h6>
-            <a routerLink="/detalis/{{prod.id}}" class="btn btn-primary">detalis</a>
+        <div *ngFor="let prod of relatedProdWindow" class="card m-0" style="width: 18rem;">
+          <img routerLink="/detalis/{{prod.id}}" [src]="prod.images[0]" class="card-img-top" alt="product image">
+          <div class="card-body p-1">
+            <h5 class="card-title d-none d-lg-block">{{prod.title}}</h5>
+            <h6 class="card-title align-self-end">{{prod.price}}$</h6>
+            <a routerLink="/detalis/{{prod.id}}" class="btn btn-primary d-none d-lg-block">detalis</a>
           </div>
         </div>
       </div>
     </div>
   <!-- Carousel Controls -->
-  <button class="carousel-control-prev " (click)="prevCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+  <button class="carousel-control-prev  " (click)="prevCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
   </button>
@@ -76,7 +77,7 @@
 
 <!-- home product carousel -->
 <hr>
-<div class="container d-flex justify-content-end">
+<div class="container d-flex justify-content-end d-none d-lg-block ">
 
 <app-home></app-home>
 
