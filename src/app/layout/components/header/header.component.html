@@ -54,7 +54,7 @@
   <a class="nav-link dropdown-toggle" routerLink="/login" role="button">
     login  </a>
 <!-- login toast start -->
-  <div *ngIf="toastFlag && !islogedin" class=" dropdown-menu p-2 text-body-secondary show login-toast d-flex flex-wrap align-items-end" >
+  <div *ngIf="toastFlag && !islogedin" class="d-none d-lg-block dropdown-menu p-2 text-body-secondary show login-toast d-flex flex-wrap align-items-end " >
     <a class="btn btn-primary m-0 p-1 align-self-start" style="width: 140px ; margin-left: auto;" routerLink="/login" role="button">
       login  </a>
       <div class="new-user-aleart ">
@@ -64,7 +64,7 @@
   </div>
   <!-- login toast end -->
 
-    <div *ngIf="showDropdown && !toastFlag" class="dropdown-menu show  min-width shadow">
+    <div *ngIf="showDropdown && !toastFlag" class="d-none d-lg-block dropdown-menu show  min-width shadow">
       <app-login></app-login>
 
     </div>

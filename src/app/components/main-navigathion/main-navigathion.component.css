@@ -1,0 +1,121 @@
+/* Center the cards */
+.container {
+  text-align: center;
+}
+
+/* product poster image */
+.product-img {
+  width: 100% !important;
+  /* height: 390px; */
+  border-radius: 10px;
+  border: solid 3px white;
+
+}
+/* product card styling */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  width: 80% !important;
+  /* height: 452px; */
+}
+.card-btn{
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 5px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.text-white{
+  color: white;
+}
+.similarproduct-img{
+  width: 92px !important;
+  height: 138px;
+  border-radius: 10px;
+  border: solid 3px white;
+
+}
+.similarproduct-img:hover{
+  border: solid 3px #0dcaf0;
+
+}
+.similar-card{
+  max-width: 250px;
+  margin-left: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: baseline;
+}
+
+
+.fixed-top {
+  position: sticky;
+  top: 0; /* Sticks to the top */
+  background: white;
+  z-index: 1000;
+  padding: 10px;
+}
+.box-shadow{
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Makes the icons white */
+}
+/* Smooth sliding effect */
+.carousel-inner {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Fade effect between slides */
+.carousel-item {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Add smooth movement for previous button */
+.carousel-item.prev {
+  transform: translateX(-100%);
+}
+
+/* Custom card transition effect */
+.card {
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Customizing carousel control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+

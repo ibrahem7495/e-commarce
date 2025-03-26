@@ -1,7 +1,8 @@
 
 
 <div *ngFor="let cat of cats ; index as i" id="cardCarousel" class="carousel slide " data-bs-ride="carousel">
-<div class="carousel-inner">
+<h3>explore our {{cat.name}}</h3>
+  <div class="carousel-inner">
   <div  class="carousel-item active">
     <div  class="d-flex justify-content-center">
       <div *ngFor="let prod of prodWindow[i]" class="card m-0" style="width: 18rem;">
