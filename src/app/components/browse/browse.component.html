@@ -1,0 +1,27 @@
+<div class="row m-0 flex-wrap">
+<h3>Result</h3>
+<!-- product image -->
+<div *ngFor="let searchProduct of searcheResult" class="col-lg-4 col-md-6 col-sm-12 ">
+  <div class="product-card m-0 fixed-top box-shadow">
+     <!-- image slider start -->
+     <div class="card" style="width: 18rem; height: 490px;">
+      <a role="button" routerLink="/detalis/{{searchProduct.id}}">
+<img [src]="searchProduct.images[0]" class="card-img-top img" alt="prduct image">
+      </a>
+      <div class="card-body">
+        <a routerLink="/detalis/{{searchProduct.id}} " class="card-title">{{searchProduct.title}}</a>
+        <p class="card-text "> {{searchProduct.category.name}}</p>
+        <h3>{{searchProduct.price}}$</h3>
+      <a class="btn btn-info btn-block" > add to cart</a>
+
+      </div>
+    </div>
+           <!-- image slider end -->
+
+    <div class="d-grid gap-2 mt-1">
+      <!-- <a class="btn btn-info btn-block" (click)="addToCart(product.id)" >ADD TO CART</a> -->
+      <!-- <a class="btn btn-info btn-block"></a> -->
+    </div>
+  </div>
+</div>
+</div>

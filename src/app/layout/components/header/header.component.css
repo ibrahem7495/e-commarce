@@ -1,0 +1,64 @@
+
+/* Ensure dropdown menu is positioned correctly */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  min-width: 250px;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
+}
+
+/* Show when dropdown is active */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Styling for better appearance */
+.min-width {
+  min-width: 280px;
+}
+
+.shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.toast {
+  z-index: 1050;
+}
+.login-toast{
+width: 160px !important;
+height: 80px;
+top: 50px;
+
+
+}
+.login-toast::after{
+  content: "";
+  position: absolute;
+  bottom:  80px;
+  left: 75px ;
+  border: 10px solid transparent;
+  border-bottom-color: white ;
+}
+.dropdown-menu{
+  min-width: 100px;
+  right:-45px;
+}
+.new-user-aleart{
+text-align: center;
+font-size: 13px;
+}
+.text-white{
+  color: white;
+}

@@ -1,0 +1,84 @@
+  <div class="row m-0">
+    <!-- product image -->
+    <div class="col-lg-6 col-md-6 col-sm-12 ">
+      <div class="product-card m-0 fixed-top box-shadow">
+         <!-- image slider start -->
+         <ngb-carousel *ngIf="product.images.length " >
+          <ng-template ngbSlide *ngFor="let img of product.images">
+            <img [src]="img" style="width: 400px;" alt="Slide image">
+          </ng-template>
+        </ngb-carousel>
+               <!-- image slider end -->
+
+        <div class="d-grid gap-2 mt-1">
+          <a class="btn btn-info btn-block" (click)="addToCart(product)" >ADD TO CART</a>
+          <!-- <a class="btn btn-info btn-block"></a> -->
+        </div>
+      </div>
+    </div>
+    <!-- product title and details -->
+
+    <div class="container col-lg-3 col-md-6 d-none d-md-block">
+      <h1 class=" text-start fixed-top">
+        {{ product.title }}
+      </h1>
+      <h2 class=" text-start ">
+        {{ product.price}} $
+      </h2>
+
+      <p class="text-start  fp-1">Lorem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing orem ipsum dolor sit amet consectetur adipisicing elit. Minima error sint repellendus quibusdam nisi repellat sequi dolore quae rem. Ea eveniet aperiam dolore fuga sequi ratione inventore? Enim, mollitia dolorem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam neque delectus, unde amet aspernatur nam ipsa sapiente ad perspiciatis veniam laborum, iure tenetur sunt dolorum fugiat mollitia hic quibusdam. Praesentium. {{ product.description }}</p>
+
+    </div>
+    <!-- similar prod -->
+    <div class="d-none d-lg-flex similar-card col-3">
+      <h5 style=" width: 100%; text-align: center">
+        Similar products
+      </h5>
+      <div *ngFor="let similarprod of relatedProd?.slice(0,4)">
+        <a routerLink="/detalis/{{ similarprod.id }}">
+          <img
+            [src]="similarprod.images[0]"
+            alt="product Poster"
+            class="img-fluid similarproduct-img  mb-3"
+          />
+        </a>
+      </div>
+    </div>
+
+  </div>
+<hr>
+<h3>Products related to this item</h3>
+
+<div id="cardCarousel" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div  class="carousel-item active">
+      <div  class="d-flex justify-content-center">
+        <div *ngFor="let prod of relatedProdWindow index as i " class="card m-0" style="width: 18rem;">
+          <img [src]="prod.images[0]" class="card-img-top" alt="product image">
+          <div class="card-body">
+            <h5 class="card-title">{{prod.title}}</h5>
+            <h6 class="card-title">{{prod.price}}$</h6>
+            <a routerLink="/detalis/{{prod.id}}" class="btn btn-primary">detalis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev " (click)="prevCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+  </button>
+  <button class="carousel-control-next" (click)="nextCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+</div>
+
+<!-- home product carousel -->
+<hr>
+<div class="container d-flex justify-content-end">
+
+<app-home></app-home>
+
+</div>
+

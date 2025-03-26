@@ -1,0 +1,46 @@
+<div class="signUp-container text-start">
+  <h2 class="text-center">Sign Up</h2>
+
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <!-- Name Field -->
+  <div class="mb-3">
+    <label for="name" class="form-label ">Name</label>
+    <input type="text" id="name" class="form-control" formControlName="name">
+    <div  *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger mt-2">
+      Name is required.
+    </div>
+  </div>
+
+  <!-- Email Field -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" class="form-control" formControlName="email">
+    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger mt-2">
+      <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+      <span *ngIf="f['email'].errors?.['email']">Invalid email format.</span>
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" id="password" class="form-control" formControlName="password">
+    <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger mt-2">
+      <span  *ngIf="f['password'].errors?.['required']">Password is required.</span>
+      <span *ngIf="f['password'].errors?.['minlength']">Password must be at least 6 characters.</span>
+    </div>
+  </div>
+
+  <!-- Avatar Field -->
+  <div class="mb-3">
+    <label for="avatar" class="form-label">Avatar URL</label>
+    <input type="text" id="avatar" class="form-control" formControlName="avatar">
+    <div *ngIf="f['avatar'].touched && f['avatar'].invalid" class="alert alert-danger mt-2">
+      Avatar URL is required.
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">Sign Up</button>
+</form>
+</div>

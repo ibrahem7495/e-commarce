@@ -1,0 +1,7 @@
+.horizontal-line{
+  /* background-color: black;
+  width: 5px;
+  height: 100px; */
+  border-right: 3px solid #dddddd;
+  margin-top: 25px;
+}

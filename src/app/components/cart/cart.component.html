@@ -1,0 +1,27 @@
+<div class="row m-0 flex-wrap">
+  <h3>CART</h3>
+  <!-- product image -->
+  <div *ngFor="let cartProduct of cartitems" class="col-lg-4 col-md-6 col-sm-12 ">
+    <div class="product-card m-0 fixed-top box-shadow">
+       <!-- image slider start -->
+       <div class="card" style="width: 18rem; height: 490px;">
+        <a role="button" routerLink="/detalis/{{cartProduct.id}}">
+  <img [src]="cartProduct.images[0]" class="card-img-top img" alt="prduct image">
+        </a>
+        <div class="card-body">
+          <a routerLink="/detalis/{{cartProduct.id}} " class="card-title">{{cartProduct.title}}</a>
+          <p class="card-text "> {{cartProduct.category.name}}</p>
+          <h3>{{cartProduct.price}}$</h3>
+        <a class="btn btn-info btn-block btn-danger" > remove</a>
+
+        </div>
+      </div>
+             <!-- image slider end -->
+
+      <div class="d-grid gap-2 mt-1">
+        <!-- <a class="btn btn-info btn-block" (click)="addToCart(product.id)" >ADD TO CART</a> -->
+        <!-- <a class="btn btn-info btn-block"></a> -->
+      </div>
+    </div>
+  </div>
+  </div>

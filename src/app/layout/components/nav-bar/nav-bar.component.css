@@ -1,0 +1,59 @@
+
+/* Ensure dropdown menu is positioned correctly */
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: -125px;
+  background: white;
+  border-radius: 8px;
+  min-width: 250px;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
+ z-index: 2000;
+}
+
+/* Show when dropdown is active */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Styling for better appearance */
+.min-width {
+  min-width: 280px;
+}
+
+.shadow {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+.navbar{
+padding: 0;
+height: 39px;
+padding: 5px;
+display: flex;
+justify-content: flex-start;
+}
+.bg-gray{
+  background-color: #232f3e;
+  color: white;
+}
+a{
+height: 39px;
+color: white;
+
+}
+a:hover{
+  border: 1px solid white ;
+  color: white;
+
+}
+.align-self{
+align-self: flex-end;
+}
