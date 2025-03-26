@@ -52,8 +52,8 @@ this.cats=[]
   nextCarouslPage(index:number){
     this.userIndex[index]+=1
     if (this.products) {
-  if (this.userIndex[index]>this.products.length-this.windoowLimit) {
-  this.userIndex[index]=this.products.length-this.windoowLimit
+  if (this.userIndex[index]>this.products[index].length-this.windoowLimit) {
+  this.userIndex[index]=this.products[index].length-this.windoowLimit
     }
     }
 
@@ -72,16 +72,20 @@ this.cats=[]
 
 
    updateCarousl(index?:number){
-    if(index==undefined){
+
 this.cats?.forEach((cat,i) => {
+   if(index==undefined){
+      console.log("index==undefined")
+
 this.prodWindow[i]=this.products[i]?.slice(0,this.windoowLimit)//0 is for initial value
-  console.log("window",this.prodWindow)
-  console.log("userIndex",this.userIndex)
-})
-    }else{
+   }else{
       this.prodWindow[index]=this.products[index]?.slice(this.userIndex[index],this.userIndex[index]+this.windoowLimit)
-  console.log("window",this.prodWindow)
-    }
+  console.log(" else",this.userIndex)
+  console.log(" else",this.prodWindow[index])
+
+}
+})
+
 }
 
   getCats(){
