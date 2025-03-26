@@ -41,7 +41,7 @@ getUserId():Observable<number>{
 }
 // product api crud
 
-getAllProduts(limit:number,offset:number):Observable<ProdType[]>{
+getAllProduts(limit?:number,offset?:number):Observable<ProdType[]>{
   return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products?limit=${limit}&offset=${offset}`)
 }
 getPrductById(id:number |undefined):Observable<ProdType>{

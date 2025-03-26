@@ -4,9 +4,9 @@
 <div *ngFor="let searchProduct of searcheResult" class="col-lg-4 col-md-6 col-sm-12 ">
   <div class="product-card m-0 fixed-top box-shadow">
      <!-- image slider start -->
-     <div class="card" style="width: 18rem; height: 490px;">
+     <div class="card">
       <a role="button" routerLink="/detalis/{{searchProduct.id}}">
-<img [src]="searchProduct.images[0]" class="card-img-top img" alt="prduct image">
+<img [src]="searchProduct.images[0]" class="card-img-top img" alt="prduct image" >
       </a>
       <div class="card-body">
         <a routerLink="/detalis/{{searchProduct.id}} " class="card-title">{{searchProduct.title}}</a>

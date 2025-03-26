@@ -17,7 +17,7 @@
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  width: 605px !important;
+  width: auto;
   /* height: 452px; */
 }
 .card-btn{

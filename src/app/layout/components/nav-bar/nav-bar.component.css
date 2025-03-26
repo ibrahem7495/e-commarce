@@ -2,7 +2,7 @@
 /* Ensure dropdown menu is positioned correctly */
 .dropdown-menu {
   position: absolute;
-  top: 45px;
+  top: 39px;
   right: -125px;
   background: white;
   border-radius: 8px;

@@ -50,11 +50,11 @@
          <!-- drop dowen start -->
          <li class="nav-item">
 <!-- Dropdown on Hover  -->
-<div class="dropdown position-relative"  (mouseenter)="showDropdown = true" >
+<div class="dropdown position-relative"  (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false" >
   <!-- Dropdown Toggle -->
   <a class="nav-link dropdown-toggle" routerLink="/login" role="button">
     addes  </a>
-    <div *ngIf="showDropdown" class="dropdown-menu show  min-width shadow" (mouseleave)="showDropdown = false">
+    <div *ngIf="showDropdown" class="dropdown-menu show  min-width shadow"(mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
       <img  src="https://fakeimg.pl/350x200/?text=World&font=lobster" alt="">
     </div>
 </div>

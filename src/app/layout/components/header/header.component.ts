@@ -24,7 +24,7 @@ searchValue:string="";
     this.islogedin=this.authService.isAuthenticated();
     setTimeout(() => {
         this.toastFlag=false; // Hide toast
-    }, 200);  // Hide after 2 seconds
+    }, 5000);  // Hide after 5 seconds
   }
 
 
