@@ -12,6 +12,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { SidbarLayoutComponent } from './layout/components/sidbar-layout/sidbar-layout.component';
 import { BrowseComponent } from './components/browse/browse.component';
 import { CartComponent } from './components/cart/cart.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   // layout without headet and footer
@@ -25,13 +26,13 @@ const routes: Routes = [
     {path : 'editProfile',component : EditProfileComponent,canActivate :[AuthReturnGuard]},
     {path: 'detalis/:prodIdFordetalis',component:DetailsComponent},
     {path: 'cart',component:CartComponent},
+    {path:'search/:slug',component :SearchComponent},
 
     // layout with sidebar
     {path:"",component:SidbarLayoutComponent,children:[
-      {path:'home',component:HomeComponent},
+      {path:'home',component:MainNavigathionComponent},
       {path :'main',component:MainNavigathionComponent },//canActivate :[AuthReturnGuard]
-      {path:'browse/:slug',component :BrowseComponent},
-
+      {path:'browse/:catId',component:BrowseComponent}
       ]},
 
   ] }

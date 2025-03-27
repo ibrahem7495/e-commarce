@@ -61,6 +61,10 @@ align-self: flex-end;
   height: 100%;
 
 }
+.dropdown-menu-dark{
+  color: white !important;
+background-color: #232f3e;
+}
 /* .navbar-nav {
   flex-wrap: nowrap !important;
 } */

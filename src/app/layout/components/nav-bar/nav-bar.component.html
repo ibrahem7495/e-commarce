@@ -38,15 +38,17 @@
       <ul class="navbar-nav   ">
 
         <li  class="nav-item">
-          <a class="nav-link">Eid Deals</a>
+          <a class="nav-link" routerLink="/browse/1">clothes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home">mobile phones</a>
+          <a class="nav-link" routerLink="/browse/2">Electronics</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/main">Electronics</a>
+          <a class="nav-link"  routerLink="/browse/3">Furniture</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/browse/4">shose</a>
+        </li>
          <!-- drop dowen start -->
          <li class="nav-item">
 <!-- Dropdown on Hover  -->
@@ -62,14 +64,33 @@
 <!-- Dropdown  end -->
 
 <li   class="nav-item">
-  <a class="nav-link" routerLink="/editProfile">fashion</a>
-</li>
-<li   class="nav-item">
   <a class="nav-link" routerLink="/editProfile">appliances</a>
 </li>
         </ul>
       </div>
 
+<!-- drop dowen start -->
+<li class="navbar-nav ps-2 pe-2 nav-item dropdown d-lg-none  ">
+  <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Select Catigory
+  </a>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li >
+      <a class="dropdown-item"  routerLink="/browse/4">shose</a>
+    </li>
+    <li >
+      <a class="dropdown-item"  routerLink="/browse/1">clothes</a>
+    </li>
+    <li >
+      <a class="dropdown-item" routerLink="/browse/2">Electronics</a>
+    </li>
+    <li >
+      <a class="dropdown-item"  routerLink="/browse/3">Furniture</a>
+    </li>
+
+  </ul>
+</li>
+  <!-- Dropdown  end -->
 <ul class="navbar-nav   ms-auto">
 <li   class="nav-item " >
   <a class="nav-link m-0 p-0 " routerLink="/home"><img class="img-fluid" src="https://m.media-amazon.com/images/G/42/Homepage/2025/Events/Q1/EIDSale/swm/2502EID036_EID25_EG_GW_SWM_EID_Sale_Live_400x39_EN._CB548038224_.jpg" alt="eid sale image"></a>

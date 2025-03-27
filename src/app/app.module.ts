@@ -14,6 +14,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowseComponent } from './components/browse/browse.component';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     DetailsComponent,
     CartComponent,
     BrowseComponent,
+    SearchComponent,
 
 
   ],
