@@ -1,17 +1,17 @@
 <div class="row m-0 flex-wrap">
 <h3>Result</h3>
 <!-- product image -->
-<div *ngFor="let searchProduct of searcheResult" class="col-lg-4 col-md-6 col-sm-12 ">
+<div *ngFor="let product of catProducts" class="col-lg-4 col-md-6 col-sm-12 ">
   <div class="product-card m-0 fixed-top box-shadow">
      <!-- image slider start -->
      <div class="card">
-      <a role="button" routerLink="/detalis/{{searchProduct.id}}">
-<img [src]="searchProduct.images[0]" class="card-img-top img" alt="prduct image" >
+      <a role="button" routerLink="/detalis/{{product.id}}">
+<img [src]="product.images[0]" class="card-img-top img" alt="prduct image" >
       </a>
       <div class="card-body">
-        <a routerLink="/detalis/{{searchProduct.id}} " class="card-title">{{searchProduct.title}}</a>
-        <p class="card-text "> {{searchProduct.category.name}}</p>
-        <h3>{{searchProduct.price}}$</h3>
+        <a routerLink="/detalis/{{product.id}} " class="card-title">{{product.title}}</a>
+        <p class="card-text "> {{product.category.name}}</p>
+        <h3>{{product.price}}$</h3>
       <a class="btn btn-info btn-block" > add to cart</a>
 
       </div>
@@ -25,3 +25,17 @@
   </div>
 </div>
 </div>
+<!-- pagenation -->
+<nav aria-label="..." class="d-flex justify-content-center">
+  <ul class="pagination">
+    <li class="page-item ">
+      <a class="page-link" (click)="prevPage()">Previous</a>
+    </li>
+    <li *ngFor="let page of pagesNum " class="page-item "[class.active]="page==pageIndex" aria-current="page">
+      <a class="page-link"  (click)="goPage(page)">{{page+1}}</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link " (click)="nextPage()">Next</a>
+    </li>
+  </ul>
+</nav>

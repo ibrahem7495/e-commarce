@@ -1,6 +1,6 @@
 import { ApiService } from './../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
 import { ProdType } from 'src/app/model/prod-type';
 
 @Component({
@@ -9,30 +9,65 @@ import { ProdType } from 'src/app/model/prod-type';
   styleUrls: ['./browse.component.css']
 })
 export class BrowseComponent implements OnInit  {
-searcheResult!:ProdType[];
-  constructor(private activatedRoute:ActivatedRoute, private apiService:ApiService) { }
+catProducts:ProdType[];
+pagesNum:number[];
+pageIndex:number;
+catId:number;
+isLastPage:boolean=false;
+  constructor(private activatedRoute:ActivatedRoute, private apiService:ApiService) {
+    this.catProducts=[]
+    this.pagesNum=[]
+    this.pageIndex=0;
+    this.catId=0;
+   }
 
   ngOnInit(): void {
-    this.getSearchTermFromUrl();
-
+    this.getCatigoryFromUrl();
+console.log('ng on init')
   }
 
-getSearchTermFromUrl(){
+getCatigoryFromUrl(){
   this.activatedRoute.paramMap.subscribe({
     next:(value)=>{
-      const slug = value.get('slug')?? ""//if null use an empty string;
-    //get searc hValue
-      this.getSearchValue(slug)
-      
+       this.catId = Number(value.get('catId'))
+//reintialize page index and pageNum array  when catigory change
+       this.pageIndex=0;
+       this.pagesNum=[];
+       this.pagesNum.push(this.pageIndex)
+       this.isLastPage=false;
+      this.getCatigoryProducts(this.catId,this.pageIndex)
+
     }
   })
 }
-getSearchValue(slug:string ){
-this.apiService.getSearchResult(slug).subscribe({
+getCatigoryProducts(catId:number,offset:number){
+this.apiService.getProductByCatId(10,offset,catId).subscribe({
   next:(result)=>{
-this.searcheResult=result;
-console.log(this.searcheResult)
+this.catProducts=result;
+console.log(this.catProducts)
+if(result.length<10){
+  this.isLastPage=true
+}
   }
 })
+}
+nextPage(){
+  if(this.isLastPage){
+
+  }else{
+  this.pageIndex++
+  if(this.pageIndex>Math.max(...this.pagesNum) ){this.pagesNum.push(this.pageIndex)}
+  this.goPage(this.pageIndex)
+  }
+}
+prevPage(){
+  this.pageIndex--
+  this.pageIndex= this.pageIndex<0 ?  0 : this.pageIndex;
+  this.goPage(this.pageIndex)
+
+}
+goPage(page:number){
+  this.pageIndex=page;
+this.getCatigoryProducts(this.catId,this.pageIndex)
 }
 }
