@@ -1,15 +1,81 @@
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(100%); /* Makes the icons white */
-}
-/* Smooth sliding effect */
-.carousel-inner {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
+/* Center the cards */
+.container {
+  text-align: center;
 }
 
+/* product poster image */
+.product-img {
+  width: 460px !important;
+  height: 490px;
+  border-radius: 10px;
+  border: solid 3px white;
+
+}
+/* product card styling */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  /* width: 605px !important; */
+  /* height: 452px; */
+}
+.card-btn{
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 5px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.text-white{
+  color: white;
+}
+.btn-info{
+  padding:1px 10px 1px 10px ;
+border: 1px solid inherit;
+  border-radius: 100px;
+}
+.img {
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-title{
+  font-style: normal;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+.card-title:hover{
+color:#0dcaf0 ;
+}
+.width-20{
+  width: 20%;
+}
+
+
+
+/* old home bage  */
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon { */
+  /* filter: invert(100%); Makes the icons white */
+/* } */
+/* Smooth sliding effect */
+/* .carousel-inner {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+} */
+
 /* Fade effect between slides */
-.carousel-item {
+/* .carousel-item {
   opacity: 0;
   transform: translateX(100%);
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
@@ -18,15 +84,15 @@
 .carousel-item.active {
   opacity: 1;
   transform: translateX(0);
-}
+} */
 
 /* Add smooth movement for previous button */
-.carousel-item.prev {
+/* .carousel-item.prev {
   transform: translateX(-100%);
-}
+} */
 
 /* Custom card transition effect */
-.card {
+/* .card {
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
@@ -36,7 +102,7 @@
 }
 
 /* Customizing carousel control icons */
-.carousel-control-prev-icon,
+/* .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
@@ -46,5 +112,5 @@
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
+} */ 
 

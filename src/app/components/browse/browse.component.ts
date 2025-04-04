@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/services/cart.service';
 import { ApiService } from './../../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ pagesNum:number[];
 pageIndex:number;
 catId:number;
 isLastPage:boolean=false;
-  constructor(private activatedRoute:ActivatedRoute, private apiService:ApiService) {
+  constructor(private activatedRoute:ActivatedRoute, private apiService:ApiService,private cartService: CartService) {
     this.catProducts=[]
     this.pagesNum=[]
     this.pageIndex=0;
@@ -69,5 +70,8 @@ prevPage(){
 goPage(page:number){
   this.pageIndex=page;
 this.getCatigoryProducts(this.catId,this.pageIndex)
+}
+addToCart(product:ProdType){
+this.cartService.addToCart(product)
 }
 }

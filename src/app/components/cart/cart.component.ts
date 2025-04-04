@@ -1,8 +1,9 @@
 import { Cart } from 'src/app/model/cart';
 import { ApiService } from './../../services/api.service';
 import { CartService } from './../../services/cart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ProdType } from 'src/app/model/prod-type';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -11,13 +12,30 @@ import { ProdType } from 'src/app/model/prod-type';
 })
 export class CartComponent implements OnInit {
 
-cartitems:ProdType[];
+cartitems:Cart[];
+items:Cart[];
+
+
   constructor(private cartService:CartService,private apiService:ApiService) {
     this.cartitems=[]
+    this.items=[]
    }
 
   ngOnInit(): void {
-this.cartitems=this.cartService.cartitems
+    this.updateCartValues();
+  }
+  remove(idToRemove:number){
+  this.cartService.remove(idToRemove);//remve from local storage
+  // this.cartitems.splice(idIndexToRemove,1)//remove imediatly from cart component to avoid relode the component in all removing click
+this.updateCartValues();
+  }
+  updateCartValues(){
+    console.log('cart commponent', this.cartitems=this.cartService.items)
+
+  }
+  updateQuantity(index:number,addValue:number){
+this.cartService.cartitems[index].quantity=addValue;
+this.cartService.syncItems();
   }
 
 }

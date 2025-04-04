@@ -60,3 +60,35 @@ font-size: 13px;
 .text-white{
   color: white;
 }
+.fa-1x{
+font-size: 25px;
+text-decoration: none ;
+color: #9b9d9e;
+
+}
+.fa-1x:hover{
+  color:  rgb(26, 115, 232) !important;
+}
+.circle{
+
+  background-color: rgb(26, 115, 232);
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 22px;
+    line-height: 19px;
+    margin-left: -6px;
+    text-align: center;
+    width: 22px;
+    padding: 0px  !important;
+}
+.circle:hover{
+  border: 2px solid #fff ;
+}
+.login{
+  z-index: 1100;
+}

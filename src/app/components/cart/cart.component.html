@@ -1,18 +1,28 @@
 <div class="row m-0 flex-wrap">
   <h3>CART</h3>
   <!-- product image -->
-  <div *ngFor="let cartProduct of cartitems" class="col-lg-4 col-md-6 col-sm-12 ">
+  <div *ngFor="let cartProduct of cartitems index as idIndex" class="col-lg-4 col-md-6 col-sm-12 ">
     <div class="product-card m-0 fixed-top box-shadow">
        <!-- image slider start -->
-       <div class="card" style="width: 18rem; height: 490px;">
-        <a role="button" routerLink="/detalis/{{cartProduct.id}}">
-  <img [src]="cartProduct.images[0]" class="card-img-top img" alt="prduct image">
+       <div class="card">
+        <a role="button" routerLink="/detalis/{{cartProduct.product.id}}">
+  <img [src]="cartProduct.product.images[0]" class="card-img-top img" alt="prduct image">
         </a>
         <div class="card-body">
-          <a routerLink="/detalis/{{cartProduct.id}} " class="card-title">{{cartProduct.title}}</a>
-          <p class="card-text "> {{cartProduct.category.name}}</p>
-          <h3>{{cartProduct.price}}$</h3>
-        <a class="btn btn-info btn-block btn-danger" > remove</a>
+          <a routerLink="/detalis/{{cartProduct.product.id}} " class="card-title">{{cartProduct.product.title}}</a>
+          <p class="card-text "> {{cartProduct.product.category.name}}</p>
+          <h3>Total : <span style="color: grey;">{{cartProduct.product.price*cartProduct.quantity}}</span> $</h3>
+          <form class="d-flex">
+            <input class="form-control me-2 width-20" [(ngModel)]="cartProduct.quantity" name="quantity" max="100" min="1" type="number" placeholder="quantity" aria-label="quantity">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <!-- <button class="btn btn-outline-primary " type="button" (click)="updateQuantity(idIndex,cartProduct.quantity-1)"  >-</button>
+              <button class="btn btn-outline-primary " type="button" (click)="updateQuantity(idIndex,cartProduct.quantity+1)"  >+</button> -->
+              <button class="btn btn-outline-primary" type="button" (click)="updateQuantity(idIndex,cartProduct.quantity)"  >Add More</button>
+
+              <button class="btn btn-outline-danger " type="button" (click)="remove(cartProduct.product.id)" > remove</button>
+            </div>
+          </form>
+          <!-- <h3>{{cartProduct.quantity}}</h3> -->
 
         </div>
       </div>

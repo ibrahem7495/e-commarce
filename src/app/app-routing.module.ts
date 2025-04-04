@@ -30,7 +30,7 @@ const routes: Routes = [
 
     // layout with sidebar
     {path:"",component:SidbarLayoutComponent,children:[
-      {path:'home',component:MainNavigathionComponent},
+      {path:'home',component:HomeComponent},
       {path :'main',component:MainNavigathionComponent },//canActivate :[AuthReturnGuard]
       {path:'browse/:catId',component:BrowseComponent}
       ]},

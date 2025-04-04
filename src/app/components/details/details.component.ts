@@ -72,8 +72,8 @@ this.updateCarousl();
 }
 
 
-addToCart(prodId:ProdType){
-this.cartService.addToCart(prodId)
+addToCart(prod:ProdType){
+this.cartService.addToCart(prod)
 }
 
  nextCarouslPage(){
