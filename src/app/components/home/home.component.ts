@@ -3,19 +3,37 @@ import { ProdType } from 'src/app/model/prod-type';
 import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { CatType } from 'src/app/model/cat-type';
+// import { MainNavigathionComponent } from "../main-navigathion/main-navigathion.component";
 
 @Component({
   selector: 'app-home',
+
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+
+  // imports: [MainNavigathionComponent]
 })
 export class HomeComponent implements OnInit {
   categories:CatType[];
+  products:ProdType[][];
+prodWindow:ProdType[][];
+windoowLimit:number=1;
+userIndex:number[]=[];
+newests:ProdType[];
   constructor(private apiService:ApiService){
     this.categories=[]
+    this.products=[];
+this.prodWindow=[]
+this.newests=[]
   }
   ngOnInit(): void {
     this.getAllCatigories();
+    this.apiService.getAllCarts().subscribe({
+      next:(value)=>{
+        console.log('cart ::: ',value)
+      }
+    })
+    this.getnewests();
   }
   getAllCatigories(){
     this.apiService.getAllCategory().subscribe({
@@ -24,6 +42,91 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+  currentIndex = 0;
+  prevIndex=0;
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % 3;
+    this.prevIndex = (this.currentIndex - 1) % 3;
+    if(this.prevIndex<0){this.prevIndex=2}
+    console.log(this.currentIndex,this.prevIndex)
+
+    this.applyEffect();
+
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + 3) % 3;
+//     console.log(this.currentIndex)
+//     this.prevIndex=( 3 - this.currentIndex )  ;
+// console.log(this.currentIndex,this.prevIndex)
+    this.applyEffect();
+
+  }
+  triggerEffect = false;
+
+  applyEffect() {
+    this.triggerEffect = false; // reset in case it's already true
+    setTimeout(() => this.triggerEffect = true, 10); // force class re-add
+  }
+
+  // second carousel what's new
+
+  nextCarouslPage(index:number){
+    this.userIndex[index]+=1
+    if (this.products) {
+  if (this.userIndex[index]>this.products[index].length-this.windoowLimit) {
+  this.userIndex[index]=this.products[index].length-this.windoowLimit
+    }
+    }
+
+     this.updateCarousl(index);
+
+     }
+  prevCarouslPage(index:number){
+
+    this.userIndex[index]-=1
+  if (this.userIndex[index]<0) {
+  this.userIndex[index]=0;
+    }
+     this.updateCarousl(index);
+
+  }
+
+
+   updateCarousl(index?:number){
+
+this.newests?.forEach((newest,i) => {
+   if(index==undefined){
+      console.log("index==undefined")
+
+this.prodWindow[i]=this.products[i]?.slice(0,this.windoowLimit)//0 is for initial value
+   }else{
+      this.prodWindow[index]=this.products[index]?.slice(this.userIndex[index],this.userIndex[index]+this.windoowLimit)
+  console.log(" else",this.userIndex)
+  console.log(" else",this.prodWindow[index])
+
+}
+})
+
+}
+getnewests(){
+  this.apiService.getAllProduts(10,0).subscribe({
+    next:(value)=>{
+      this.newests=value;
+    }
+  })
+}
+setCarouselWindowLimit(){
+  const windowWidth=window.innerWidth
+  this.windoowLimit=4;
+ if (windowWidth > 1024) {
+   this.windoowLimit = 4;
+ } else if (windowWidth > 768) {
+   this.windoowLimit = 3;
+ } else {
+   this.windoowLimit = 1;
+ }
+}
 }
 
 // export class HomeComponent implements OnInit {

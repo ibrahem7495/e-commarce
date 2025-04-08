@@ -1,4 +1,5 @@
-import { Cart } from 'src/app/model/cart';
+import { fackPrduct } from './../../model/cart';
+import { Cart, fackCart } from 'src/app/model/cart';
 import { ApiService } from './../../services/api.service';
 import { CartService } from './../../services/cart.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
@@ -14,15 +15,34 @@ export class CartComponent implements OnInit {
 
 cartitems:Cart[];
 items:Cart[];
+// fackcart:fackCart;
+// fackprduct:fackPrduct[];
 
 
   constructor(private cartService:CartService,private apiService:ApiService) {
     this.cartitems=[]
     this.items=[]
+  //   this.fackprduct=[{
+  //     id:10,
+  //     title : 'hema'
+  //     ,price:1234,
+  //     description:'yalabena ',
+  //     category:'clothis',
+  //     image:'https://fakeimg.pl/300/'
+  //         }]
+  //   this.fackcart={userId:2,products:this.fackprduct
+  // }
    }
 
   ngOnInit(): void {
     this.updateCartValues();
+    // this.fackcart={userId:101,products:this.fackprduct    }
+    // this.apiService.CreateNewCart(this.fackcart).subscribe({
+    //   next:(value)=>{
+    //     console.log('fack cart ::: ',value)
+    //   }
+    // })
+
   }
   remove(idToRemove:number){
   this.cartService.remove(idToRemove);//remve from local storage

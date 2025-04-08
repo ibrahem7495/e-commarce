@@ -1,6 +1,91 @@
 
+/* new test branche */
+.text-decoration{
+  text-decoration: none;
+  color: black;
+}
+.text-decoration:hover{
+  text-decoration: underline;
+}
+.f-black{
+  color: black;
+}
+.fa{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+
+}
+.title{
+  display: block;
+  text-align: center;
+}
+.wid-3{
+width: 33.333333% !important ;
+}
+.nav-icon{
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+.nav-link{
+  color: black;
+}
+
+.menu{
+  border :1px solid #e5e5e5;
+  margin: 0;
+  width: 100%;
+  z-index: 1500;
+
+}
+.min-width{
+  width: 100% !important;
+}
+.wid-4{
+  width: 25%;
+}
+.f-color-gray{
+  color:#afa8a8 ;
+}
+.rounded-radius{
+  border-radius: 8px;
+}
+.r-0{
+ /* position:relative; */
+ right: 0;
+ width: 100%;
+}
+.dropdown-menu.show {
+  display: none;
+}
+.z-index{
+  z-index: 1111;
+}
+.nav-item:hover .dropdown-menu.show{
+display: block;
+}
+.nav-content{
+  position:absolute ;
+  left: 0;
+
+}
+.float-nav{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+justify-self:center;
+height: 100%;
+}
+.float-nav:hover{
+  border-bottom: 2px solid black;
+
+}
+
+/* old  */
 /* Ensure dropdown menu is positioned correctly */
-.dropdown-menu {
+/* .dropdown-menu {
   position: absolute;
   top: 40px;
   right: 0;
@@ -14,18 +99,18 @@
   padding: 0px;
   border-width: 0px;
   margin: 0px;
-}
+} */
 
 /* Show when dropdown is active */
-.dropdown:hover .dropdown-menu,
+/* .dropdown:hover .dropdown-menu,
 .dropdown-menu.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}
+} */
 
 /* Styling for better appearance */
-.min-width {
+/* .min-width {
   min-width: 280px;
 }
 
@@ -91,4 +176,4 @@ color: #9b9d9e;
 }
 .login{
   z-index: 1100;
-}
+} */

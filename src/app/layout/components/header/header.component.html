@@ -1,18 +1,311 @@
+<!-- new test rebo header start -->
+<!-- 1st nav bar -->
+<nav>
+  <div class="d-flex justify-content-between">
+    <!-- left side -->
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link text-decoration" href="#">Active link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-decoration" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-decoration" href="#">Disabled link</a>
+      </li>
+    </ul>
+    <!-- right side  -->
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <!-- offcanvas togel link -->
+        <a
+          class="nav-link f-black"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          >Accessibility adjustment
+        </a>
+        <!--1st offcanvas content -->
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+              Offcanvas right
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">...</div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <!--2nd  offcanvas togel link -->
+        <a
+          class="nav-link f-black"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          >United States ($) - Language: English
+        </a>
+        <!--2nd offcanvas content -->
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">
+              Offcanvas right
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">...</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<hr />
+<!-- 2nd nav bar -->
+<nav>
+  <div class="d-flex justify-content-end align-items-center">
+    <div class="d-flex justify-content-center wid-3">
+      <img src="../../../../assets/img/imagesedit.jpg " class="" alt="" />
+    </div>
+    <div class="d-flex wid-3 justify-content-around">
+      <a class="text-center nav-icon" routerLink=""
+        ><i class="fa fa-search fa-2x" aria-hidden="true"></i
+        ><span class="title">search</span></a
+      >
+      <a class="text-center nav-icon"
+        ><i class="fa fa-user-o fa-2x" aria-hidden="true"></i
+        ><span class="title">user</span></a
+      >
+      <a class="text-center nav-icon"
+        ><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i
+        ><span class="title">wishList</span></a
+      >
+      <a class="text-center nav-icon"
+        ><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i
+        ><span class="title">Bag</span></a
+      >
+    </div>
+  </div>
+</nav>
+<!-- 3rd nav bar -->
+<nav>
+  <ul class="nav justify-content-center dropdown">
+    <div class="d-flex justify-content-center">
+      <!-- 1st nav item  -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-nowrap ">
-  <div class="container">
- <!-- Brand Logo with Small Image -->
- <a class="navbar-brand d-flex align-items-center" href="#">
+      <div class="nav-item p-0 r-0">
+        <!-- Dropdown Toggle -->
+        <a class="nav-link text-center float-nav" routerLink="" role="button">
+          latest collections
+        </a>
+
+        <div class="dropdown-menu nav-content show z-index p-3">
+          <div class="row">
+            <div class="col-3 m-0">
+              <p>
+                From the latest red soles to the next must-have accessories, hit
+                refresh on your line-up with our latest collections of stand-out
+                styles.
+              </p>
+            </div>
+            <div class="col-9">
+              <div class="d-flex flex-wrap">
+                <a
+                  *ngFor="let category of categories.slice(0, 6)"
+                  class="wid-3 p-1 nav-icon"
+                  ><img
+                    class="img-fluid rounded-radius"
+                    [src]="category.image"
+                    [id]="category.name"
+                    [alt]="category.slug"
+                  />
+                  <label
+                    class="f-color-gray d-block pt-1"
+                    [for]="category.name"
+                    >{{ category.name }}</label
+                  >
+                  <label class="" [for]="category.name">{{
+                    category.slug
+                  }}</label>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2nd nav item  -->
+      <div class="nav-item p-0 r-0">
+        <!-- Dropdown Toggle -->
+        <a class="nav-link text-center float-nav" routerLink="" role="button">
+          latest collections
+        </a>
+
+        <div class="dropdown-menu nav-content show z-index p-3">
+          <div class="row">
+            <div class="col-3 m-0">
+              <p>
+                From the latest red soles to the next must-have accessories, hit
+                refresh on your line-up with our latest collections of stand-out
+                styles.
+              </p>
+            </div>
+            <div class="col-9">
+              <div class="d-flex flex-wrap">
+                <a
+                  *ngFor="let category of categories.slice(0, 6)"
+                  class="wid-3 p-1 nav-icon"
+                  ><img
+                    class="img-fluid rounded-radius"
+                    [src]="category.image"
+                    [id]="category.name"
+                    [alt]="category.slug"
+                  />
+                  <label
+                    class="f-color-gray d-block pt-1"
+                    [for]="category.name"
+                    >{{ category.name }}</label
+                  >
+                  <label class="" [for]="category.name">{{
+                    category.slug
+                  }}</label>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3rd nav item  -->
+      <div class="nav-item p-0 r-0">
+        <!-- Dropdown Toggle -->
+        <a class="nav-link text-center float-nav" routerLink="" role="button">
+          clothes
+        </a>
+
+        <div class="dropdown-menu nav-content show z-index p-3">
+          <div class="row">
+            <div class="col-3 m-0">
+              <p class="bg-danger">
+                From the latest red soles to the next must-have accessories, hit
+                refresh on your line-up with our latest collections of stand-out
+                styles.
+              </p>
+            </div>
+            <div class="col-9">
+              <div class="d-flex flex-wrap">
+                <a
+                  *ngFor="let category of categories.slice(0, 5)"
+                  class="wid-3 p-1 nav-icon"
+                  ><img
+                    class="img-fluid rounded-radius"
+                    [src]="category.image"
+                    [id]="category.name"
+                    [alt]="category.slug"
+                  />
+                  <label
+                    class="f-color-gray d-block pt-1"
+                    [for]="category.name"
+                    >{{ category.name }}</label
+                  >
+                  <label class="" [for]="category.name">{{
+                    category.slug
+                  }}</label>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 4th nav item  -->
+      <div class="nav-item p-0 r-0">
+        <!-- Dropdown Toggle -->
+        <a class="nav-link text-center float-nav" routerLink="" role="button">
+          laaaa
+        </a>
+
+        <div class="dropdown-menu nav-content show z-index p-3">
+          <div class="row">
+            <div class="col-3 m-0">
+              <p class="bg-danger">
+                From the latest red soles to the next must-have accessories, hit
+                refresh on your line-up with our latest collections of stand-out
+                styles.
+              </p>
+            </div>
+            <div class="col-9">
+              <div class="d-flex flex-wrap">
+                <a
+                  *ngFor="let category of categories.slice(0, 5)"
+                  class="wid-3 p-1 nav-icon"
+                  ><img
+                    class="img-fluid rounded-radius"
+                    [src]="category.image"
+                    [id]="category.name"
+                    [alt]="category.slug"
+                  />
+                  <label
+                    class="f-color-gray d-block pt-1"
+                    [for]="category.name"
+                    >{{ category.name }}</label
+                  >
+                  <label class="" [for]="category.name">{{
+                    category.slug
+                  }}</label>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ul>
+</nav>
+
+<!-- test rebo header end -->
+
+
+
+
+
+
+
+
+
+<!-- old header -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-nowrap ">
+  <div class="container"> -->
+<!-- Brand Logo with Small Image -->
+<!-- <a class="navbar-brand d-flex align-items-center" href="#">
   <img src=""
        alt="Brand Logo" width="40" height="40" class="rounded-circle me-2">
   <span class="d-none d-lg-flex">E-commerce</span>
-</a>
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+</a> -->
+<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button> -->
-       <!-- Search Bar -->
-        <!-- <ul class="navbar-nav ms-auto "> -->
-<form class="d-flex" >
+<!-- Search Bar -->
+<!-- <ul class="navbar-nav ms-auto "> -->
+<!-- <form class="d-flex" >
   <input class="form-control me-2" [(ngModel)]="searchValue" name="searchText" type="search" placeholder="Search" aria-label="Search">
 
   <a class="fa fa-search fa-1x p-1" aria-hidden="true"  type="button" routerLink="/search/{{searchValue}}" ></a>
@@ -31,36 +324,36 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/home">Home</a>
-        </li>
-        <!-- <li class="nav-item">
+        </li> -->
+<!-- <li class="nav-item">
           <a class="nav-link" routerLink="/main">main</a>
         </li> -->
 
-        <li *ngIf="islogedin"  class="nav-item ">
+<!-- <li *ngIf="islogedin"  class="nav-item ">
           <a class="nav-link" routerLink="/editProfile">edit Profile</a>
-        </li>
-         <!-- drop dowen  -->
-         <li *ngIf="!islogedin" class="nav-item">
+        </li> -->
+<!-- drop dowen  -->
+<!-- <li *ngIf="!islogedin" class="nav-item"> -->
 
 <!-- Dropdown on Hover -->
-<div class="position-apsolute">
+<!-- <div class="position-apsolute">
 
-  <div class="dropdown-center position-relative"  (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false">
-  <!-- Dropdown Toggle -->
-  <a class="nav-link dropdown-toggle" routerLink="/login" role="button">
-    login  </a>
+  <div class="dropdown-center position-relative"  (mouseenter)="showDropdown = true" (mouseleave)="showDropdown = false"> -->
+<!-- Dropdown Toggle -->
+<!-- <a class="nav-link dropdown-toggle" routerLink="/login" role="button">
+    login  </a> -->
 <!-- login toast start -->
-  <div *ngIf="toastFlag && !islogedin" class="d-none d-lg-block dropdown-menu p-2 text-body-secondary show login-toast d-flex flex-wrap align-items-end " >
+<!-- <div *ngIf="toastFlag && !islogedin" class="d-none d-lg-block dropdown-menu p-2 text-body-secondary show login-toast d-flex flex-wrap align-items-end " >
     <a class="btn btn-primary m-0 p-1 align-self-start" style="width: 140px ; margin-left: auto;" routerLink="/login" role="button">
       login  </a>
       <div class="new-user-aleart ">
         <span >New User ? </span> <a style="width: 100%;"  routerLink="/signUp" role="button">
         sign Up here </a>
       </div>
-  </div>
-  <!-- login toast end -->
+  </div> -->
+<!-- login toast end -->
 
-    <div *ngIf="showDropdown && !toastFlag" class="login d-none d-lg-block dropdown-menu show  min-width shadow">
+<!-- <div *ngIf="showDropdown && !toastFlag" class="login d-none d-lg-block dropdown-menu show  min-width shadow">
       <app-login></app-login>
 
     </div>
@@ -75,4 +368,4 @@
         </ul>
     </div>
   </div>
-</nav>
+</nav> -->

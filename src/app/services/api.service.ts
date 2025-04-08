@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ProdType } from '../model/prod-type';
 import { CatType } from '../model/cat-type';
+import { Cart, fackCart } from '../model/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +74,12 @@ getSearchResult(slug:string ):Observable<ProdType[]> {
    return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`).pipe(map(value=>value.filter(filteredValue=>
     filteredValue.slug.includes(slug)
    )))
+}
+getAllCarts():Observable<any>{
+  return this.httpClient.get<any>('https://fakestoreapi.com/carts')
+}
+CreateNewCart(products:fackCart){
+  console.log('CreateNewCart(products:fackCart)',products)
+return this.httpClient.post<fackCart>('https://fakestoreapi.com/carts',JSON.stringify(products),this.httpOptions)
 }
 }

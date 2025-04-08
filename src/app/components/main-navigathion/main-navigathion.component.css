@@ -8,7 +8,6 @@
   width: 100% !important;
   /* height: 390px; */
   border-radius: 10px;
-  border: solid 3px white;
 
 }
 /* product card styling */
@@ -99,6 +98,7 @@
 /* Custom card transition effect */
 .card {
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
 }
 
 .card:hover {

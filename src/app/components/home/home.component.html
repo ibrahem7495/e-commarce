@@ -1,10 +1,72 @@
-<div class="row m-0 flex-wrap">
-  <h3>  Home  </h3>
-  <!-- product image -->
-  <div *ngFor="let category of categories index as idIndex" class="col-lg-4 col-md-6 col-sm-12 ">
-    <div class="product-card m-0 fixed-top box-shadow">
-       <!-- image slider start -->
-       <div class="card">
+<!-- test branch home bage start-->
+
+<div
+  class="d-flex justify-content-between "
+  (swipeleft)="next()"
+  (swiperight)="prev()"
+>
+   <img
+    *ngFor="let category of categories.slice(0, 3); let i = index"
+    [src]="category.image"
+    [alt]="category.name"
+    [class.fetcher-effect]="i === prevIndex && triggerEffect"
+    [class.back-image]="i === currentIndex"
+    class="d-none bg-danger"
+  />
+
+  <div class="controls">
+    <button class="carousel-control-prev  "  (click)="prev()" type="button">
+      <span class="carousel-control-prev-icon" ></span>
+    </button>
+    <!-- <button style="right: 10px ;" (click)="next()">Next</button> -->
+  </div>
+  <div class="gallery max-size" (swipeleft)="next()" (swiperight)="prev()">
+    <img
+      *ngFor="let category of categories.slice(0, 3); let i = index"
+      [src]="category.image"
+      [alt]="category.name"
+      [class.fetcher-effect]="i === prevIndex && triggerEffect"
+      [class.active]="i === currentIndex"
+      class="carousel-img p-2 max-size"
+    />
+  </div>
+
+  <div class=" d-none d-lg-flex align-content-center justify-content-start flex-wrap "  (swipeleft)="next()" (swiperight)="prev()">
+    <h3
+      *ngFor="let category of categories.slice(0, 3); let i = index"
+      class="p-3 d-none"
+      style="color: white"
+      [class.catname]="i === currentIndex"
+    >
+      {{ category.name }}
+      <a  routerLink="/browse/{{category.id}}" class= "d-block btn btn-home-bage mt-3" role="button"> Descver</a>
+
+    </h3>
+  </div>
+
+  <div class="controls">
+    <!-- <button style="left: 10px;" (click)="prev()">Prev</button> -->
+    <button class="carousel-control-next" (click)="next()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<!-- What's new section-->
+ <div class="mt-10">
+   <app-main-navigathion></app-main-navigathion>
+
+ </div>
+<!-- test branch home bage end-->
+
+<!-- old home  category  -->
+<!-- <div class="row m-0 flex-wrap">
+  <h3>  Home  </h3> -->
+<!-- product image -->
+<!-- <div *ngFor="let category of categories index as idIndex" class="col-lg-4 col-md-6 col-sm-12 ">
+    <div class="product-card m-0 fixed-top box-shadow"> -->
+<!-- image slider start -->
+<!-- <div class="card">
         <a role="button" routerLink="/browse/{{category.id}}">
   <img [src]="category.image" class="card-img-top img" alt="prduct image">
         </a>
@@ -20,22 +82,12 @@
       </div>
     </div>
   </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
+  </div> -->
 
 <!-- old Home bage  -->
 <!-- <div *ngFor="let cat of catigories index as index"> -->
-  <!-- <h3>{{}}</h3> -->
-  <!-- <h1>Explore our top {{cat.name}}</h1>
+<!-- <h3>{{}}</h3> -->
+<!-- <h1>Explore our top {{cat.name}}</h1>
 <div id="cardCarousel" class="carousel slide " data-bs-ride="carousel">
   <div class="carousel-inner">
     <div  class="carousel-item active">
@@ -50,8 +102,8 @@
         </div>
       </div>
     </div> -->
-  <!-- Carousel Controls -->
-  <!-- <button class="carousel-control-prev " (click)="prevCarouslPage(cat.id,index)" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+<!-- Carousel Controls -->
+<!-- <button class="carousel-control-prev " (click)="prevCarouslPage(cat.id,index)" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
   </button>

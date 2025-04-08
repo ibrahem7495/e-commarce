@@ -105,11 +105,11 @@ this.prodWindow[i]=this.products[i]?.slice(0,this.windoowLimit)//0 is for initia
   }
   setCarouselWindowLimit(){
      const windowWidth=window.innerWidth
-     this.windoowLimit=4;
+     this.windoowLimit=3;
     if (windowWidth > 1024) {
-      this.windoowLimit = 4;
-    } else if (windowWidth > 768) {
       this.windoowLimit = 3;
+    } else if (windowWidth > 768) {
+      this.windoowLimit = 2;
     } else {
       this.windoowLimit = 1;
     }
