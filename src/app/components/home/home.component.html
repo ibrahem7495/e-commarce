@@ -1,12 +1,13 @@
 <!-- test branch home bage start-->
 
 <div
-  class="d-flex justify-content-between "
+  class=" img-div  "
   (swipeleft)="next()"
   (swiperight)="prev()"
 >
-   <img
-    *ngFor="let category of categories.slice(0, 3); let i = index"
+<div class="image-wrapper">
+  <img
+    *ngFor="let category of categories.slice(1, 4); let i = index"
     [src]="category.image"
     [alt]="category.name"
     [class.fetcher-effect]="i === prevIndex && triggerEffect"
@@ -14,26 +15,25 @@
     class="d-none bg-danger"
   />
 
-  <div class="controls">
-    <button class="carousel-control-prev  "  (click)="prev()" type="button">
-      <span class="carousel-control-prev-icon" ></span>
-    </button>
-    <!-- <button style="right: 10px ;" (click)="next()">Next</button> -->
-  </div>
-  <div class="gallery max-size" (swipeleft)="next()" (swiperight)="prev()">
+</div>
+
+
+  <div class="gap-left"> </div>
+
+  <div class="gallery max-size " (swipeleft)="next()" (swiperight)="prev()">
     <img
-      *ngFor="let category of categories.slice(0, 3); let i = index"
+      *ngFor="let category of categories.slice(1, 4); let i = index"
       [src]="category.image"
       [alt]="category.name"
       [class.fetcher-effect]="i === prevIndex && triggerEffect"
       [class.active]="i === currentIndex"
       class="carousel-img p-2 max-size"
+      role="button" routerLink="/browse/{{category.id}}"
     />
   </div>
-
   <div class=" d-none d-lg-flex align-content-center justify-content-start flex-wrap "  (swipeleft)="next()" (swiperight)="prev()">
     <h3
-      *ngFor="let category of categories.slice(0, 3); let i = index"
+      *ngFor="let category of categories.slice(1, 4); let i = index"
       class="p-3 d-none"
       style="color: white"
       [class.catname]="i === currentIndex"
@@ -44,12 +44,15 @@
     </h3>
   </div>
 
-  <div class="controls">
-    <!-- <button style="left: 10px;" (click)="prev()">Prev</button> -->
-    <button class="carousel-control-next" (click)="next()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
-  </div>
+
+</div>
+<div class="controls">
+  <button class="carousel-control-prev  "  (click)="prev()" type="button">
+  <span class="carousel-control-prev-icon" ></span>
+</button>
+<button class="carousel-control-next" (click)="next()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+</button>
 </div>
 
 <!-- What's new section-->

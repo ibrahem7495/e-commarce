@@ -14,6 +14,7 @@
   text-decoration: none;
   color: black;
   text-align: center;
+  padding: 8px;
 
 }
 .title{
@@ -82,7 +83,34 @@ height: 100%;
   border-bottom: 2px solid black;
 
 }
+.fixed-top {
+  position: sticky !important;
+  top: 0; /* Sticks to the top */
+  background: white;
+  padding: 10px;
+  z-index: 2000;
+}
+.hidden{
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5);
+}
+.onScroling-float-right{
+  justify-content: end !important;
 
+}
+.onScroling-float-left{
+  justify-content: start !important;
+
+}
+.__3rd-nav-onScroling{
+  display: inline-block;
+
+}
+.icons-container{
+display: flex;
+justify-content: space-around;
+}
 /* old  */
 /* Ensure dropdown menu is positioned correctly */
 /* .dropdown-menu {

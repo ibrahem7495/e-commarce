@@ -34,7 +34,7 @@ import { SearchComponent } from './components/search/search.component';
     UserModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

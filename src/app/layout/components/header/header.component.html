@@ -1,6 +1,6 @@
 <!-- new test rebo header start -->
 <!-- 1st nav bar -->
-<nav>
+<nav #targetDiv>
   <div class="d-flex justify-content-between">
     <!-- left side -->
     <ul class="nav justify-content-end">
@@ -81,36 +81,43 @@
     </ul>
   </div>
 </nav>
-<hr />
+<hr   />
 <!-- 2nd nav bar -->
-<nav>
-  <div class="d-flex justify-content-end align-items-center">
-    <div class="d-flex justify-content-center wid-3">
-      <img src="../../../../assets/img/imagesedit.jpg " class="" alt="" />
+<nav class="fixed-top " >
+  <div class="d-flex justify-content-end align-items-center ">
+    <div class="d-flex justify-content-center wid-3" [class.hidden]="hideLogo"   >
+      <img src="/assets/img/imagesedit.jpg " role="button" routerLink="/home" alt="e-commarce logo " />
     </div>
-    <div class="d-flex wid-3 justify-content-around">
-      <a class="text-center nav-icon" routerLink=""
+    <div class="icons-container wid-3   " [class.onScroling-float-right]="hideLogo" >
+      <form class="d-flex text-center"  >
+        <input class="form-control me-2" [class.d-none]="!hideLogo" [(ngModel)]="searchValue" name="searchText" type="search" placeholder="Search" aria-label="Search">
+     <a class="text-center nav-icon" type="button" routerLink="/search/{{searchValue}}"
         ><i class="fa fa-search fa-2x" aria-hidden="true"></i
-        ><span class="title">search</span></a
-      >
-      <a class="text-center nav-icon"
+        ><span class="title" [class.d-none]="hideLogo" >search</span></a>
+      </form>
+
+
+
+      <a class="text-center nav-icon" role="button" routerLink="/editProfile"
         ><i class="fa fa-user-o fa-2x" aria-hidden="true"></i
-        ><span class="title">user</span></a
+        ><span class="title" [class.d-none]="hideLogo">user</span></a
       >
       <a class="text-center nav-icon"
-        ><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i
-        ><span class="title">wishList</span></a
+        ><i class="fa fa-heart-o fa-2x" role="button" routerLink="/cart" aria-hidden="true"></i
+        ><span class="title" [class.d-none]="hideLogo">wishList</span></a
       >
       <a class="text-center nav-icon"
-        ><i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i
-        ><span class="title">Bag</span></a
+        ><i class="fa fa-shopping-bag fa-2x" role="button" routerLink="/cart" aria-hidden="true"></i
+        ><span class="title" [class.d-none]="hideLogo" >Bag</span></a
       >
     </div>
+
+
   </div>
 </nav>
 <!-- 3rd nav bar -->
-<nav>
-  <ul class="nav justify-content-center dropdown">
+<nav class="fixed-top " [class.__3rd-nav-onScroling]="hideLogo">
+  <ul class="nav justify-content-center dropdown"[class.onScroling-float-left]="hideLogo">
     <div class="d-flex justify-content-center">
       <!-- 1st nav item  -->
 
@@ -153,46 +160,27 @@
             </div>
           </div>
         </div>
+
       </div>
       <!-- 2nd nav item  -->
-      <div class="nav-item p-0 r-0">
+      <div *ngFor="let category of categories.slice(0,4)" class="nav-item p-0 r-0">
         <!-- Dropdown Toggle -->
-        <a class="nav-link text-center float-nav" routerLink="" role="button">
-          latest collections
+        <a class="nav-link text-center float-nav" routerLink="/browse/{{category.id}}" role="button">
+          {{category.name}}
         </a>
 
         <div class="dropdown-menu nav-content show z-index p-3">
-          <div class="row">
-            <div class="col-3 m-0">
-              <p>
-                From the latest red soles to the next must-have accessories, hit
-                refresh on your line-up with our latest collections of stand-out
-                styles.
-              </p>
-            </div>
-            <div class="col-9">
-              <div class="d-flex flex-wrap">
-                <a
-                  *ngFor="let category of categories.slice(0, 6)"
-                  class="wid-3 p-1 nav-icon"
-                  ><img
-                    class="img-fluid rounded-radius"
-                    [src]="category.image"
-                    [id]="category.name"
-                    [alt]="category.slug"
-                  />
-                  <label
-                    class="f-color-gray d-block pt-1"
-                    [for]="category.name"
-                    >{{ category.name }}</label
-                  >
-                  <label class="" [for]="category.name">{{
-                    category.slug
-                  }}</label>
-                </a>
-              </div>
-            </div>
-          </div>
+<div class="row " >
+  <!-- <div class="col-3">
+<h4>{{category.name}}</h4>
+  </div> -->
+  <div *ngFor="let prod of prodofcats(category.id)" calss="col-3">
+<h4>{{prod.title}}</h4>
+<hr>
+<img [src]="prod.images[0]" [alt]="prod.slug">
+  </div>
+
+</div>
         </div>
       </div>
       <!-- 3rd nav item  -->

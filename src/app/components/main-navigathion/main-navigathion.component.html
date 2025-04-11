@@ -1,11 +1,46 @@
+<!-- home.component.html -->
 
+<div class="container py-4">
+  <h3 class="text-center mb-4">What's New</h3>
+
+  <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Loop through the products array and display each card inside the carousel -->
+<!-- Outer loop: loop through starting indices of chunks -->
+<div *ngFor="let i of getSteppedIndices(); let groupIndex = index" class="carousel-item" [class.active]="groupIndex === 0">
+  <div class="d-flex justify-content-center gap-3 trim-right">
+    <!-- Inner loop: show 3 items per carousel-item -->
+    <div *ngFor="let prod of products.slice(i, i + windowLimit)" role="button" routerLink="/detalis/{{prod.id}}" class="card" >
+      <img [src]="prod.images[0]" class="card-img-top" alt="Product Image" role="button" routerLink="/detalis/{{prod.id}}" style="height: 100%; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title" routerLink="/detalis/{{prod.id}}" role="button">{{ prod.title }}</h5>
+        <h6 class="card-price">{{ prod.price }}$</h6>
+        <a routerLink="/detalis/{{prod.id}}" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev"  type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!--
 
 <div  class="carousel slide " data-bs-ride="carousel">
-<h3 class="text-center "> what's new </h3>
+<h1 class="text-center "> what's new </h1>
   <div class="carousel-inner">
   <div  class="carousel-item active">
     <div  class="d-flex justify-content-center">
-      <div *ngFor="let prod of prodWindow[0]" class="card m-0" style="width: 40rem;">
+      <div *ngFor="let prod of prodWindow" class="card m-0" style="width: 40rem;">
         <img routerLink="/detalis/{{prod.id}}" [src]="prod.images[0]" class="card-img-top" style="min-height:200px ;" alt="product image">
         <div class="card-body p-1">
           <h5 class="card-title d-none d-lg-block">{{prod.title}}</h5>
@@ -15,13 +50,13 @@
       </div>
     </div>
   </div>
-<!-- Carousel Controls -->
-<button class="carousel-control-prev  " (click)="prevCarouslPage(0)" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+<button class="carousel-control-prev  " (click)="prevCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
 </button>
-<button class="carousel-control-next" (click)="nextCarouslPage(0)" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+<button class="carousel-control-next" (click)="nextCarouslPage()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
   <span class="carousel-control-next-icon" aria-hidden="true"></span>
 </button>
 </div>
 </div>
+ -->
