@@ -58,5 +58,19 @@ border: 1px solid inherit;
 color:#0dcaf0 ;
 }
 .width-20{
-  width: 20%;
+  width: 45%;
+  margin: 0 !important;
+  border-radius: 0;
+  border-color: #0d6efd;
+
+}
+.btn-descver{
+  background-color: #ce0a2c;
+  color: white;
+  border-radius: 35px;
+  width: 100%;
+  padding: 7px 25px 7px 25px;
+}
+.btn{
+  border-radius: 35px;
 }

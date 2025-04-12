@@ -11,17 +11,21 @@
         <div class="card-body">
           <a routerLink="/detalis/{{cartProduct.product.id}} " class="card-title">{{cartProduct.product.title}}</a>
           <p class="card-text "> {{cartProduct.product.category.name}}</p>
-          <h3>Total : <span style="color: grey;">{{cartProduct.product.price*cartProduct.quantity}}</span> $</h3>
+          <h3 class="d-inline-block" >Total : <span style="color: grey;">{{cartProduct.product.price*cartProduct.quantity}}</span> $</h3>
           <form class="d-flex">
-            <input class="form-control me-2 width-20" [(ngModel)]="cartProduct.quantity" name="quantity" max="100" min="1" type="number" placeholder="quantity" aria-label="quantity">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <!-- <button class="btn btn-outline-primary " type="button" (click)="updateQuantity(idIndex,cartProduct.quantity-1)"  >-</button>
-              <button class="btn btn-outline-primary " type="button" (click)="updateQuantity(idIndex,cartProduct.quantity+1)"  >+</button> -->
-              <button class="btn btn-outline-primary" type="button" (click)="updateQuantity(idIndex,cartProduct.quantity)"  >Add More</button>
+              <button class="btn btn-outline-primary " type="button" (click)="remove(cartProduct.product.id)"  >-</button>
+              <input class="form-control me-2 width-20" [(ngModel)]="cartProduct.quantity" name="quantity" max="100" min="0" type="number" placeholder="quantity" aria-label="quantity">
 
-              <button class="btn btn-outline-danger " type="button" (click)="remove(cartProduct.product.id)" > remove</button>
+              <button class="btn btn-outline-primary " type="button" (click)="updateQuantity(idIndex,cartProduct.quantity+1)"  >+</button>
+              <!-- <button class="btn btn-outline-primary" type="button" (click)="updateQuantity(idIndex,cartProduct.quantity)"  >Add More</button> -->
+              <!-- <button class="btn btn-outline-danger " type="button" (click)="remove(cartProduct.product.id)" > remove</button> -->
+
             </div>
           </form>
+          <button class="btn btn-descver mt-2 m-1" type="button" routerLink="/login" >checkout </button>
+          <button class="btn btn-outline-dark w-100 m-1" type="button" routerLink="/home" >Continue shoping </button>
+
           <!-- <h3>{{cartProduct.quantity}}</h3> -->
 
         </div>

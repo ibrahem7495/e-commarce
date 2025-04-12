@@ -36,7 +36,7 @@ width: 33.333333% !important ;
 .menu{
   border :1px solid #e5e5e5;
   margin: 0;
-  width: 100%;
+  width: 100% !important;
   z-index: 1500;
 
 }
@@ -55,10 +55,12 @@ width: 33.333333% !important ;
 .r-0{
  /* position:relative; */
  right: 0;
- width: 100%;
+ /* width: 100% ; */
 }
 .dropdown-menu.show {
   display: none;
+  width: 100% !important;
+
 }
 .z-index{
   z-index: 1111;
@@ -87,8 +89,14 @@ height: 100%;
   position: sticky !important;
   top: 0; /* Sticks to the top */
   background: white;
-  padding: 10px;
+  padding: 15px;
   z-index: 2000;
+}
+.btn-descver{
+  background-color: #ce0a2c;
+  color: white;
+  border-radius: 35px;
+  padding: 7px 25px 7px 25px;
 }
 .hidden{
   opacity: 0;
@@ -97,11 +105,46 @@ height: 100%;
 }
 .onScroling-float-right{
   justify-content: end !important;
+  position: fixed;
+  top:0;
+  padding-top: 2px;
 
 }
 .onScroling-float-left{
   justify-content: start !important;
+  position: fixed;
+  top: 0;
 
+}
+@media (max-width: 992px) {
+  .icons-container{
+    justify-content: end !important;
+    position: fixed;
+    top:auto;
+    bottom: 0 !important;
+    padding-top: 2px;
+    background-color:#ce0a2c ;
+    width: 100% !important;
+
+  }
+  .navbar-toggler{
+    justify-content: end !important;
+    position: fixed;
+    top:auto;
+    bottom: 5px !important;
+    padding-top: 2px;
+
+  }
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+  .fixed-top{
+    padding: 0;
+  }
 }
 .__3rd-nav-onScroling{
   display: inline-block;

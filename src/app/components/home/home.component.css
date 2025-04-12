@@ -192,13 +192,13 @@ button {
 .mt-10{
   margin-top: 40px;
 }
-.btn-home-bage{
+.btn-descver{
   background-color: #ce0a2c;
   color: white;
   border-radius: 35px;
   padding: 7px 25px 7px 25px;
-
 }
+
 .max-size{
   max-width: 490px;
   max-height: 480px;
@@ -215,6 +215,12 @@ button {
   padding: 10px;
 
 }
+@media (max-width: 992px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    bottom: 20% !important ;
+  }
+}
 .img-div{
   overflow: hidden;
   display: flex;
@@ -228,7 +234,7 @@ button {
 }
 .carousel-control-prev,
 .carousel-control-next {
-  bottom: -60% !important ;
+  bottom: -60%  ;
 }
 
 
