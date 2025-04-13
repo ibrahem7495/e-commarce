@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
   // @Input() numberOfCartProducts:number;
 
   //---  new branch test -------------------
-  searchValue: string = '';
+  searchValue: string = 'all';
   showDropdown: boolean = false;
   categories: CatType[];
   navWelcome: ProdType [];

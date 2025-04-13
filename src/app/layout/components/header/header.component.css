@@ -89,8 +89,9 @@ height: 100%;
   position: sticky !important;
   top: 0; /* Sticks to the top */
   background: white;
-  padding: 15px;
+  padding: 10px;
   z-index: 2000;
+  /* max-height: 60px; */
 }
 .btn-descver{
   background-color: #ce0a2c;
@@ -108,13 +109,16 @@ height: 100%;
   position: fixed;
   top:0;
   padding-top: 2px;
+  max-height: 38px;
 
 }
 .onScroling-float-left{
   justify-content: start !important;
   position: fixed;
   top: 0;
-
+}
+.onScroll-max-heghit{
+max-height: 40px;
 }
 @media (max-width: 992px) {
   .icons-container{
@@ -123,15 +127,24 @@ height: 100%;
     top:auto;
     bottom: 0 !important;
     padding-top: 2px;
-    background-color:#ce0a2c ;
+    background-color: white;
+  border-top:1px  solid #ce0a2c ;
+  border-radius: 10px;
     width: 100% !important;
+    font-size: 1rem;
 
+  }
+  .navbar-toggler {
+    box-shadow: 0 !important;
+  }
+  .title{
+    display: none;
   }
   .navbar-toggler{
     justify-content: end !important;
     position: fixed;
     top:auto;
-    bottom: 5px !important;
+    bottom: 0px !important;
     padding-top: 2px;
 
   }
@@ -144,6 +157,16 @@ height: 100%;
   }
   .fixed-top{
     padding: 0;
+  }
+  .fa-2x{
+    font-size: 1em !important;
+
+  }
+  .w-100{
+width: 50% !important;
+  }
+  .form-control{
+    display: block !important;
   }
 }
 .__3rd-nav-onScroling{

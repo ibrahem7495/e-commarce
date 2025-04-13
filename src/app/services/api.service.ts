@@ -71,9 +71,14 @@ getRelatedProducts(id:number):Observable<ProdType[]>{
 //   return this.httpClient.get<ProdType>(`${environment.APIURL}/products/slug/${slug}`)
 // }
 getSearchResult(slug:string ):Observable<ProdType[]> {
-   return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`).pipe(map(value=>value.filter(filteredValue=>
+  if(slug=='all'){
+    return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`)
+  }else{
+     return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`).pipe(map(value=>value.filter(filteredValue=>
     filteredValue.slug.includes(slug)
    )))
+  }
+
 }
 getAllCarts():Observable<any>{
   return this.httpClient.get<any>('https://fakestoreapi.com/carts')

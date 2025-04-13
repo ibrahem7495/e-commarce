@@ -84,7 +84,9 @@
 <hr class="d-none d-lg-block" />
 <!-- 2nd nav bar -->
 <nav class="fixed-top">
-  <div class="d-flex justify-content-end align-items-center">
+  <div class="d-flex justify-content-end align-items-center "
+  [class.onScroll-max-heghit]="classOnScroll"
+  >
     <div
       class="d-none d-lg-flex justify-content-center wid-3 "
       [class.hidden]="classOnScroll"
@@ -100,10 +102,12 @@
       class="icons-container wid-3"
       [class.onScroling-float-right]="classOnScroll"
     >
-      <form class="d-flex text-center">
+      <form class="d-flex text-center justify-content-end">
         <input
-          class="form-control me-2"
+          class="form-control me-2 w-100"
           [class.d-none]="!classOnScroll"
+
+
           [(ngModel)]="searchValue"
           name="searchText"
           type="search"
@@ -112,8 +116,8 @@
         />
         <a
           class="text-center nav-icon"
-          type="button"
-          routerLink="/search/{{ searchValue }}"
+          type="button" role="button"
+          routerLink="/search/{{searchValue}}"
           ><i class="fa fa-search fa-2x" aria-hidden="true"></i
           ><span class="title" [class.d-none]="classOnScroll">search</span></a
         >
@@ -146,7 +150,8 @@
 </nav>
 <!-- 3rd nav bar -->
 <nav class="fixed-top navbar navbar-expand-lg  " [class.__3rd-nav-onScroling]="classOnScroll">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <button class="navbar-toggler"
+ type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
     <span class=""><i class="fa fa-bars" aria-hidden="true"></i>
     </span>
   </button>

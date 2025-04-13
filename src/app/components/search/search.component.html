@@ -1,7 +1,8 @@
 <div class="row m-0 flex-wrap">
+
   <h3>Result</h3>
   <!-- product image -->
-  <div *ngFor="let searchProduct of searcheResult" class="col-lg-4 col-md-6 col-sm-12 ">
+  <div *ngFor="let searchProduct of onePageData" class="col-lg-4 col-md-6 col-sm-12 ">
     <div class="product-card m-0 fixed-top box-shadow">
        <!-- image slider start -->
        <div class="card">
@@ -25,3 +26,17 @@
     </div>
   </div>
   </div>
+<!-- pagenation -->
+<nav aria-label="..." class="d-flex justify-content-center">
+  <ul class="pagination">
+    <li class="page-item ">
+      <a class="page-link" (click)="prevPage()">Previous</a>
+    </li>
+    <li *ngFor="let page of pagesNumArray " class="page-item "[class.active]="page==pageIndex" aria-current="page">
+      <a class="page-link"  (click)="goPage(page)">{{page+1}}</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link " (click)="nextPage()">Next</a>
+    </li>
+  </ul>
+</nav>
