@@ -218,13 +218,30 @@ button {
 @media (max-width: 992px) {
   .carousel-control-prev,
   .carousel-control-next {
-    bottom: 20% !important ;
+    bottom: 50% !important ;
   }
+  .carousel-button{
+
+  }
+  .max-size{
+    max-height: 355px !important;
+  }
+  .img-div{
+    flex-wrap: wrap;
+  }
+}
+.carousel-button{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: start;
+  height: 100%;
 }
 .img-div{
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 
 }
 .carousel-control-prev-icon:hover,

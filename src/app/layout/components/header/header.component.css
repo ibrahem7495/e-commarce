@@ -137,6 +137,21 @@ max-height: 40px;
   .navbar-toggler {
     box-shadow: 0 !important;
   }
+  .btn-home{
+    background-color: #ce0a2c;
+    color: white;
+    border-radius: 35px;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    bottom: 0;
+    padding: 7px 25px 7px 25px;
+  }
+  .btn-home:hover{
+    background-color: white ;
+    color:#ce0a2c;
+    border: 1px solid #ce0a2c;
+  }
   .title{
     display: none;
   }

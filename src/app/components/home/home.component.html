@@ -1,26 +1,20 @@
 <!-- test branch home bage start-->
 
-<div
-  class=" img-div  "
-  (swipeleft)="next()"
-  (swiperight)="prev()"
->
-<div class="image-wrapper">
-  <img
-    *ngFor="let category of categories.slice(1, 4); let i = index"
-    [src]="category.image"
-    [alt]="category.name"
-    [class.fetcher-effect]="i === prevIndex && triggerEffect"
-    [class.back-image]="i === currentIndex"
-    class="d-none bg-danger"
-  />
+<div class="img-div" (swipeleft)="next()" (swiperight)="prev()">
+  <div class="image-wrapper">
+    <img
+      *ngFor="let category of categories.slice(1, 4); let i = index"
+      [src]="category.image"
+      [alt]="category.name"
+      [class.fetcher-effect]="i === prevIndex && triggerEffect"
+      [class.back-image]="i === currentIndex"
+      class="d-none bg-danger"
+    />
+  </div>
 
-</div>
+  <div class="gap-left"></div>
 
-
-  <div class="gap-left"> </div>
-
-  <div class="gallery max-size " (swipeleft)="next()" (swiperight)="prev()">
+  <div class="gallery max-size" (swipeleft)="next()" (swiperight)="prev()">
     <img
       *ngFor="let category of categories.slice(1, 4); let i = index"
       [src]="category.image"
@@ -28,10 +22,15 @@
       [class.fetcher-effect]="i === prevIndex && triggerEffect"
       [class.active]="i === currentIndex"
       class="carousel-img p-2 max-size"
-      role="button" routerLink="/browse/{{category.id}}"
+      role="button"
+      routerLink="/browse/{{ category.id }}"
     />
   </div>
-  <div class=" d-none d-lg-flex align-content-center justify-content-start flex-wrap "  (swipeleft)="next()" (swiperight)="prev()">
+  <div
+    class="carousel-button "
+    (swipeleft)="next()"
+    (swiperight)="prev()"
+  >
     <h3
       *ngFor="let category of categories.slice(1, 4); let i = index"
       class="p-3 d-none"
@@ -39,27 +38,40 @@
       [class.catname]="i === currentIndex"
     >
       {{ category.name }}
-      <a  routerLink="/browse/{{category.id}}" class= "d-block btn btn-descver mt-3" role="button"> Descver</a>
-
+      <a
+        routerLink="/browse/{{ category.id }}"
+        class="d-block btn btn-descver mt-3"
+        role="button"
+      >
+        Descver</a
+      >
     </h3>
   </div>
-
-
 </div>
 <div class="controls">
-  <button class="carousel-control-prev "  [disabled]="true"  (click)="prev()" type="button">
-  <span class="carousel-control-prev-icon" ></span>
-</button>
-<button class="carousel-control-next" (click)="next()" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-</button>
+  <button
+    class="carousel-control-prev"
+    [disabled]="true"
+    (click)="prev()"
+    type="button"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    (click)="next()"
+    type="button"
+    data-bs-target="#cardCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
 </div>
 
 <!-- What's new section-->
- <div class="mt-10">
-   <app-main-navigathion></app-main-navigathion>
-
- </div>
+<div class="mt-10">
+  <app-main-navigathion></app-main-navigathion>
+</div>
 <!-- test branch home bage end-->
 
 <!-- old home  category  -->
