@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   // loginAleart:boolean=true;
   // toastFlag:boolean=true;
   // searchValue:string="";
-  // numberOfCartProducts:number;
+  numberOfCartProducts:number;
   // @Input() numberOfCartProducts:number;
 
   //---  new branch test -------------------
@@ -42,8 +42,9 @@ export class HeaderComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private apiService: ApiService,
+    private cartService:CartService
   ) {
-    // this.numberOfCartProducts=0;
+    this.numberOfCartProducts=0;
 
     //---  new branch test -------------------
     this.categories = [];
@@ -54,7 +55,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     //---  new branch test -------------------
     this.getAllCategories();
-
+    this.cartNumber()
     // this.cartService.syncItems()
     // this.cartService.cartLength$.subscribe({
     //   next:(value)=>{this.numberOfCartProducts=value}
@@ -95,5 +96,13 @@ this.classOnScroll=true;
         },
       });
       return null
+  }
+  cartNumber(){
+    this.cartService.cartLength$.subscribe({
+      next:(value)=>{
+        this.numberOfCartProducts=value;
+        console.log('caaaaaaaaaaaaaaaaaaaaaaa',this.numberOfCartProducts)
+      }
+    })
   }
 }

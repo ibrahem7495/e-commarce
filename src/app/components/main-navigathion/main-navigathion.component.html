@@ -1,4 +1,4 @@
-<!-- home.component.html -->
+<!-- test branche -->
 
 <div class="container py-4">
   <h3 class="text-center mb-4">What's New</h3>
@@ -32,6 +32,34 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div>
+
+<div *ngFor="let category of categories ; let i = index">
+  <div class="d-flex justify-content-start" [class.flex-row-reverse]="!isEven(i) ">
+    <div class="img-fluid w-50 p-5">
+      <img [src]="category.image"class="img-fluid" alt="">
+
+  </div>
+  <div class="w-50 align-self-center p-5">
+<h3> {{category.name}}</h3>
+<p>let's take a lock on our {{category.slug}}</p>
+<a
+routerLink="/browse/{{ category.id }}"
+class="d-block btn btn-descver mt-3"
+role="button"
+>
+Descver</a>
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
 
 <!--
 

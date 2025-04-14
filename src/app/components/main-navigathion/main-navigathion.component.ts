@@ -14,17 +14,18 @@ products:ProdType[];
 windowLimit:number=3;
 carouselWindow:number[]
 userIndex:number=0;
-cats:CatType[];
+categories:CatType[];
   constructor(private apiService:ApiService) {
 this.products=[];
 // this.prodWindow=[]
 this.carouselWindow=[0,1,2]
-this.cats=[]
+this.categories=[]
   }
 
   ngOnInit(): void {
     this.setCarouselWindowLimit();
-    this.getAllProduct()
+    this.getAllProduct();
+    this.getAllCategories();
 
   }
   @HostListener('window:resize')
@@ -39,7 +40,14 @@ this.cats=[]
       }
     })
 }
-
+getAllCategories(){
+  this.apiService.getAllCategory().subscribe({
+    next:(value)=>{
+      this.categories =value;
+      // console.log('this.prodWindow',this.prodWindow)
+    }
+  })
+}
   nextCarouslPage(){
     this.userIndex +=1
     if (this.products) {
@@ -86,4 +94,5 @@ getSteppedIndices(): number[] {
   }
   return indices;
 }
+ isEven = (num: number): boolean => num % 2 === 0
 }

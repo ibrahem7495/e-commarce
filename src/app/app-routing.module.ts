@@ -13,7 +13,6 @@ import { SidbarLayoutComponent } from './layout/components/sidbar-layout/sidbar-
 import { BrowseComponent } from './components/browse/browse.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchComponent } from './components/search/search.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
 
 const routes: Routes = [
   // layout without headet and footer
@@ -34,7 +33,6 @@ const routes: Routes = [
       {path:'home',component:HomeComponent},
       {path :'main',component:MainNavigathionComponent },//canActivate :[AuthReturnGuard]
       {path:'browse/:catId',component:BrowseComponent},
-      {path:'carousel',component:CarouselComponent      }
       ]},
 
   ] }
