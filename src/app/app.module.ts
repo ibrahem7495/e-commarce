@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowseComponent } from './components/browse/browse.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { SearchComponent } from './components/search/search.component';
     CartComponent,
     BrowseComponent,
     SearchComponent,
+    CarouselComponent,
 
 
   ],
@@ -39,6 +41,7 @@ import { SearchComponent } from './components/search/search.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[CarouselComponent]
 })
 export class AppModule { }

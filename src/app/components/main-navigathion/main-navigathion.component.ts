@@ -1,5 +1,5 @@
 import { ApiService } from './../../services/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CatType } from 'src/app/model/cat-type';
 import { ProdType } from 'src/app/model/prod-type';
 
@@ -27,7 +27,10 @@ this.cats=[]
     this.getAllProduct()
 
   }
-
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.setCarouselWindowLimit();
+  }
   getAllProduct(){
     this.apiService.getAllProduts(10,10).subscribe({
       next:(value)=>{
@@ -62,15 +65,19 @@ this.cats=[]
 
 
   setCarouselWindowLimit(){
-     const windowWidth=window.innerWidth
-     this.windowLimit=3;
-    if (windowWidth > 1024) {
-      this.windowLimit = 3;
-    } else if (windowWidth > 768) {
-      this.windowLimit = 2;
-    } else {
-      this.windowLimit = 1;
-    }
+
+    //  const windowWidth=window.innerWidth
+    //  this.windowLimit=3;
+    // if (windowWidth > 1024) {
+    //   this.windowLimit = 3;
+    // } else if (windowWidth > 768) {
+    //   this.windowLimit = 2;
+    // } else {
+    //   this.windowLimit = 1;
+    // }
+      const width = window.innerWidth;
+    this.windowLimit = width >= 992 ? 3 : width >= 576 ? 2 : 1;
+
 }
 getSteppedIndices(): number[] {
   const indices = [];

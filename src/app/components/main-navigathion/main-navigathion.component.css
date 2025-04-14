@@ -18,6 +18,8 @@
   overflow: hidden;
   max-width:22rem;
   width:auto;
+  flex: 1 1 30%;
+  min-width: 250px;
 }
 .trim-right{
 float: inline-start;

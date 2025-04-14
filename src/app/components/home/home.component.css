@@ -230,6 +230,11 @@ button {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 480px) {
+  .max-size{
+    max-height: 185px !important;
+  }
+}
 .carousel-button{
   display: flex;
   flex-wrap: wrap;
