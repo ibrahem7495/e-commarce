@@ -31,14 +31,20 @@
   font-weight: bold;
   border-radius: 5px;
 }
+
 .text-white{
   color: white;
 }
 .btn-info{
-  padding:1px 10px 1px 10px ;
-border: 1px solid inherit;
-  border-radius: 100px;
+  background-color: white;
+  color: #ce0a2c;
+  border: 1px solid #ce0a2c;
+  border-radius: 35px;
+  padding: 7px 25px 7px 25px;
+max-width: 200px;
+
 }
+
 .img {
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }

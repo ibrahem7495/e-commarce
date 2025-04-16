@@ -1,5 +1,7 @@
 /* home.component.css */
-
+body{
+  margin-top: 5px;
+}
 .carousel-inner {
   display: flex;
   justify-content: flex-start;
@@ -55,6 +57,19 @@ transition: transform .5s ease-in-out;
   color: #ce0a2c;
   border: 1px solid #ce0a2c;
   border-radius: 35px;
-  width: 30%;
   padding: 7px 25px 7px 25px;
+max-width: 200px;
+}
+@media(max-width:480px) {
+  .btn-descver{
+    padding: 4px 0px 4px 0px;
+    font-size: 10px  ;
+
+  }
+  p{
+    display: none;
+  }
+  h3{
+    font-size: 18px  ;
+  }
 }
