@@ -13,9 +13,12 @@ searcheResult!:ProdType[];
 onePageData:ProdType[];
 pagesNum:number;
 pagesNumArray:number[];
+minPrice:number=-1;
+maxPrice:number=-1;
 
 pageIndex:number;
 isLastPage:boolean=false;
+slug:string=''
 
   constructor(private activatedRoute:ActivatedRoute, private apiService:ApiService) {
     this.pagesNum=0;
@@ -32,10 +35,10 @@ isLastPage:boolean=false;
 getSearchTermFromUrl(){
   this.activatedRoute.paramMap.subscribe({
     next:(value)=>{
-      let slug = value.get('slug')?? ""//if null use an empty string;
+     this.slug = value.get('slug')?? ""//if null use an empty string;
     //get searc hValue
 
-      this.getSearchValue(slug)
+      this.getSearchValue(this.slug)
 
     }
   })

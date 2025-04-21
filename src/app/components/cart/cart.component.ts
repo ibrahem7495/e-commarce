@@ -54,7 +54,7 @@ this.updateCartValues();
 
   }
   updateQuantity(index:number,addValue:number){
-   
+
 this.cartService.cartitems[index].quantity=addValue;
 this.cartService.syncItems();
   }

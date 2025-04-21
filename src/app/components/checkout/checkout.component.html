@@ -1,0 +1,51 @@
+<div class="checkout-container">
+  <!-- Form Section -->
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form-section">
+    <h2>Billing Information</h2>
+
+    <label>Full Name
+      <input formControlName="fullName" placeholder="John Doe" />
+    </label>
+
+    <label>Email
+      <input formControlName="email" type="email" placeholder="john@example.com" />
+    </label>
+
+    <label>Address
+      <input formControlName="address" placeholder="123 Main Street" />
+    </label>
+
+    <label>City
+      <input formControlName="city" />
+    </label>
+
+    <label>ZIP / Postal Code
+      <input formControlName="zip" />
+    </label>
+
+    <label>Payment Method
+      <select formControlName="paymentMethod">
+        <option value="card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="paypal">cash on delever</option>
+
+      </select>
+    </label>
+
+    <button type="submit" [disabled]="checkoutForm.invalid">Place Order</button>
+  </form>
+
+  <!-- Cart Summary -->
+  <div class="cart-section">
+    <h3>Your Cart</h3>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <div>{{ item.product.title }} (x{{ item.quantity }})</div>
+      <div>\${{ item.product.price | number: '1.2-2' }}</div>
+    </div>
+    <hr />
+    <div class="total">
+      <strong>Total:</strong>
+      <span>\${{ total | number: '1.2-2' }}</span>
+    </div>
+  </div>
+</div>

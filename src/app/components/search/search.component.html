@@ -1,5 +1,17 @@
 <div class="row m-0 flex-wrap">
 
+  <div class="search-container">
+    <i class="fas fa-search icon" role="button" (click)="getSearchValue(slug)"></i>
+    <input type="search" placeholder="Search something ..." [(ngModel)]="slug"  />
+  </div>
+  <!-- <h3>filter resule</h3>
+
+  <form>
+    <div class="form-group">
+      <label for="formControlRange">Example Range input</label>
+      <input type="range" class="form-control-range" id="formControlRange">
+    </div>
+  </form> -->
   <h3>Result</h3>
   <!-- product image -->
   <div *ngFor="let searchProduct of onePageData" class="col-lg-4 col-md-6 col-sm-12 ">
@@ -36,7 +48,7 @@
       <a class="page-link"  (click)="goPage(page)">{{page+1}}</a>
     </li>
     <li class="page-item">
-      <a class="page-link " (click)="nextPage()">Next</a>
+      <a class="page-link "  (click)="nextPage()">Next</a>
     </li>
   </ul>
 </nav>

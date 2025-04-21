@@ -21,10 +21,10 @@ index:number=0;
     this.setCarouselWindowLimit()
       this.product=  {
       id: 6,
-      title: "Classic Comfort Fit Joggers",
-      slug: "classic-comfort-fit-joggers",
-      price: 25,
-      description: "Discover the perfect blend of style and comfort with our Classic Comfort Fit Joggers. These versatile black joggers feature a soft elastic waistband with an adjustable drawstring, two side pockets, and ribbed ankle cuffs for a secure fit. Made from a lightweight and durable fabric, they are ideal for both active days and relaxed lounging.",
+      title: "Classic",
+      slug: "classic",
+      price: 2500,
+      description: "Discover Classic Comfort Fit Joggers. These versatile black joggers feature a soft elastic waistband with an adjustable drawstring, two side pockets, and ribbed ankle cuffs for a secure fit. Made from a lightweight and durable fabric, they are ideal for both active days and relaxed lounging.",
       category: {
           id: 1,
           name: "Clothes",
@@ -57,8 +57,6 @@ getProductDetalis(id:number){
   this.apiService.getPrductById(id).subscribe({
     next:(detalisValue)=>{
 this.product=detalisValue
-console.log(this.product)
-console.log('img',this.product.images)
     }
   })
 }

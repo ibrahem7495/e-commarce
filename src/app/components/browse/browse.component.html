@@ -10,8 +10,10 @@
       </a>
       <div class="card-body">
         <a routerLink="/detalis/{{product.id}} " class="card-title">{{product.title}}</a>
+
         <!-- <p class="card-text "> {{product.category.name}}</p> -->
         <h3>{{product.price}}$</h3>
+        <a routerLink="/editProduct/{{product.id}} " class="card-title">edit</a>
       <a class="btn btn-info btn-block" (click)="addToCart(product)" > add to cart</a>
 
       </div>
