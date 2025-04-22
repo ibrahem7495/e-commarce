@@ -15,6 +15,7 @@ constructor(private apiService:ApiService){
   //initialy set vlaue stored in local storage in cartitems array but if it null set as empty array
   //JSON.parse is to convert from json to an type script opject
 this.cartitems=JSON.parse( localStorage.getItem('cartItemsId') || '[]')
+  this.updateCartLength();
 }
 addToCart(product:ProdType){
   const idString=product.id.toString()

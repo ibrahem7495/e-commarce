@@ -45,7 +45,6 @@ export class HeaderComponent implements OnInit {
     private cartService:CartService
   ) {
     this.numberOfCartProducts=0;
-
     //---  new branch test -------------------
     this.categories = [];
     this.navWelcome = [];

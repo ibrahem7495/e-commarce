@@ -58,7 +58,7 @@ postNewProduct(newProd:ProdType){
 return this.httpClient.post<ProdType>(`${environment.APIURL}/products`,newProd,this.httpOptions)
 }
 editProductById(editProd:ProdType , id :number){
-  return this.httpClient.put<ProdType>(`${environment.APIURL}/products`,editProd,this.httpOptions)
+  return this.httpClient.put<ProdType>(`${environment.APIURL}/products/${id}`,editProd,this.httpOptions)
     }
 deletProductById(id:number |undefined){
   return this.httpClient.delete(`${environment.APIURL}/products/${id}`) || null;
@@ -74,9 +74,10 @@ getSearchResult(slug:string ):Observable<ProdType[]> {
   if(slug=='all'){
     return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`)
   }else{
-     return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`).pipe(map(value=>value.filter(filteredValue=>
-    filteredValue.slug.includes(slug)
-   )))
+    //  return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/`).pipe(map(value=>value.filter(filteredValue=>
+    // filteredValue.slug.includes(slug))))
+    return this.httpClient.get<ProdType[]>(`${environment.APIURL}/products/?title=${slug}`)
+
   }
 
 }

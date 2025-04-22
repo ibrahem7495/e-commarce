@@ -21,6 +21,6 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 
 
   ],
-  exports:[LoginComponent]
+  // exports:[LoginComponent]
 })
 export class UserModule { }

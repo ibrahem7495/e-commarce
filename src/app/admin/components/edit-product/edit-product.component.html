@@ -1,0 +1,65 @@
+<!-- product image -->
+
+  <div class="card w-50" >
+    <div class="card-body">
+      <form [formGroup] ="editProduct" (ngSubmit)="onsubmit()">
+      <!-- <ngb-carousel *ngIf="product?.images?.length " >
+        <ng-template ngbSlide *ngFor="let img of product?.images">
+          <img [src]="img" class="img-fluid" alt="Slide image">
+        </ng-template>
+      </ngb-carousel> -->
+      <!-- <div formArrayName="images">
+<input class="card-img p-1 mt-1 mx-3 w-50" id="card-img" type="text" placeholder="enter card img url" value="{{product?.images}}" formControlName="images">
+      <label for="card-img">card-img</label>
+      </div> -->
+      <div formArrayName="images" class="d-flex  flex-wrap">
+        <div *ngFor="let imageCtrl of images.controls; let i = index">
+          <input
+            class="card-img p-1 mt-1 mx-3 w-50"
+            [id]="'card-img-' + i"
+            type="text"
+            [formControlName]="i"
+            value="{{product?.images}}"
+            placeholder="Enter card image URL"
+          />
+          <label [for]="'card-img-' + i">Card Image {{ i + 1 }}</label>
+          <div *ngIf="imageCtrl.invalid && imageCtrl.touched" class="text-danger">
+            Image URL is required.
+          </div>
+        </div>
+        <button class="btn btn-info " (click)="addImage()">+</button>
+
+      </div>
+
+      <input class="card-img p-1 mt-1 mx-3 w-50" id="card-id" type="text" placeholder="enter card img url" value="{{product?.id}}" formControlName="id">
+      <label for="card-id">card-id</label>
+      <input class="card-title p-1 mt-1 mx-3 w-50" id="card-title" type="text" placeholder="enter card title" value="{{product?.title}}" formControlName="title">
+      <label for="card-title">card-title {{f['title'].value }}</label>
+      <input class="card-text p-1 mt-1 mx-3 w-50" id="card-slug" type="text" placeholder="enter card slug" value="{{product?.slug}}" formControlName="slug">
+      <label for="card-slug">card-slug {{f['slug'].value }}</label>
+
+      <input class="card-text p-1 mt-1 mx-3 w-50" id="card-price" type="text" placeholder="enter card price" value="{{product?.price}}" formControlName="price">
+      <label for="card-price">card-price {{f['price'].value }}</label>
+<div  formGroupName="category">
+<input class="card-title p- w-50 mx-3" id="categoryName" type="text" placeholder="enter card title" value="{{product?.category?.name}}" formControlName="name">
+      <label for="categoryName">category name</label>
+      <input class="card-title p- w-50 mx-3" id="categoryId" type="text" placeholder="enter card title" value="{{product?.category?.id}}" formControlName="id" >
+      <label for="categoryId">category</label>
+      <input class="card-title p- w-50 mx-3" id="categoryslug" type="text" placeholder="enter card title" value="{{product?.category?.slug}}" formControlName="slug" >
+      <label for="categoryslug">category</label>
+      <input class="card-title p- w-50 mx-3" id="categoryimg" type="text" placeholder="enter card title" value="{{product?.category?.image}}" formControlName="image" >
+      <label for="categoryimg">category</label>
+</div>
+
+
+      <textarea
+      class="card-text p-1 w-100"
+      id="card-description"
+      placeholder="Enter card description"
+      rows="3"
+      value="{{product?.description}}"
+      style="resize: vertical;"></textarea>
+          <button [disabled]="editProduct.invalid" (click)="onsubmit()" type="submit" class="btn btn-primary" >Save Edit </button>
+        </form>
+        </div>
+  </div>

@@ -1,3 +1,4 @@
+import { EditProductComponent } from './admin/components/edit-product/edit-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { LayoutComponent } from './layout/components/layout/layout.component';
@@ -13,6 +14,7 @@ import { SidbarLayoutComponent } from './layout/components/sidbar-layout/sidbar-
 import { BrowseComponent } from './components/browse/browse.component';
 import { CartComponent } from './components/cart/cart.component';
 import { SearchComponent } from './components/search/search.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   // layout without headet and footer
@@ -26,7 +28,9 @@ const routes: Routes = [
     {path : 'editProfile',component : EditProfileComponent,canActivate :[AuthReturnGuard]},
     {path: 'detalis/:prodIdFordetalis',component:DetailsComponent},
     {path: 'cart',component:CartComponent},
+    {path: 'checkout',component:CheckoutComponent},
     {path:'search/:slug',component :SearchComponent},
+    {path:'editProduct/:prodIdForEditing',component: EditProductComponent},
 
     // layout with sidebar
     {path:"",component:SidbarLayoutComponent,children:[

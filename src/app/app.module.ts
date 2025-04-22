@@ -15,6 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowseComponent } from './components/browse/browse.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { AdminModule } from './admin/admin.module';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,7 @@ import { SearchComponent } from './components/search/search.component';
     CartComponent,
     BrowseComponent,
     SearchComponent,
+    CheckoutComponent,
 
 
   ],
@@ -32,9 +36,11 @@ import { SearchComponent } from './components/search/search.component';
     AppRoutingModule,
     LayoutModule,
     UserModule,
+    AdminModule,
     HttpClientModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }

@@ -173,7 +173,7 @@ max-height: 40px;
   .fixed-top{
     padding: 0;
   }
-  .fa-2x{
+  .fa-x{
     font-size: 1.3em !important;
 
   }
@@ -190,7 +190,7 @@ width: 50% !important;
 }
 .icons-container{
 display: flex;
-justify-content: space-around;
+justify-content: space-around !important;
 }
 .circle{
 position: absolute;
@@ -208,6 +208,9 @@ position: absolute;
     text-align: center;
     width: 22px;
     padding: 0px  !important;
+}
+.gap{
+  color: transparent;
 }
 .circle:hover{
   background-color: #ce0a2c;
